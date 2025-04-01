@@ -1,0 +1,673 @@
+local enabled = true -- the heart of it all... one line. also js change this using J cuz i cba
+local refreshrate = 1 -- the lower the more your fps might die. 1 second is usually good enough
+
+local miscitems = {
+	-- Guns
+	hardball = {
+		WSName = "Pistol";
+		Showname = "Hardball";
+		Color = Color3.new(1, 0.32549, 0.32549);
+	};
+	doublebrrrel = {
+		WSName = "DB";
+		Showname = "Double Barrel";
+		Color = Color3.new(1, 0.32549, 0.32549);
+	};
+	deagle = {
+		WSName = "Deagle";
+		Showname = "Desert Eagle";
+		Color = Color3.new(1, 0.32549, 0.32549);
+	};
+	magnum = {
+		WSName = "MAGNUM";
+		Showname = "Magnum";
+		Color = Color3.new(1, 0.32549, 0.32549);
+	};
+	mp5 = {
+		WSName = "MP5";
+		Showname = "MP5";
+		Color = Color3.new(1, 0.32549, 0.32549);
+	};
+	sniper = {
+		WSName = "Sniper";
+		Showname = "Sniper Rifle";
+		Color = Color3.new(1, 0.32549, 0.32549);
+	};
+	snub = {
+		WSName = "Snub";
+		Showname = "Snub Revolver";
+		Color = Color3.new(1, 0.32549, 0.32549);
+	};
+	toolboxmac10 = {
+		WSName = "ToolboxMAC10";
+		Showname = "Toolbox MAC-10";
+		Color = Color3.new(1, 0.32549, 0.32549);
+	};
+	acecarabine = {
+		WSName = "AceCarabine";
+		Showname = "Ace Carbine";
+		Color = Color3.new(1, 0.32549, 0.32549);
+	};
+	ak47 = {
+		WSName = "AK47";
+		Showname = "AK-47";
+		Color = Color3.new(1, 0.32549, 0.32549);
+	};
+
+	-- Non-gun items (No color assigned)
+	coffee = {
+		WSName = "Coffee";
+		Showname = "Coffee";
+		Color = Color3.new(0.313725, 0.172549, 0.0588235)
+	};
+	bottle = {
+		WSName = "Bottle";
+		Showname = "Seltzer Bottle";
+		Color = Color3.new(0.160784, 1, 0.792157)
+	};
+
+	-- Magazines (Bright Orange)
+	snubcylinder = {
+		WSName = "SnubCylinder";
+		Showname = "Snub Cylinder";
+		Color = Color3.new(1, 0.5, 0);
+	};
+	pistolmag = {
+		WSName = "PistolMag";
+		Showname = "Pistol Magazine";
+		Color = Color3.new(1, 0.5, 0);
+	};
+	mac10mag = {
+		WSName = "MAC10MAG";
+		Showname = "MAC-10 Magazine";
+		Color = Color3.new(1, 0.5, 0);
+	};
+	mp5mag = {
+		WSName = "MP5MAG";
+		Showname = "MP5 Magazine";
+		Color = Color3.new(1, 0.5, 0);
+	};
+	acemag = {
+		WSName = "AceMag";
+		Showname = "Ace Magazine";
+		Color = Color3.new(1, 0.5, 0);
+	};
+	akmag = {
+		WSName = "AKMag";
+		Showname = "AK Magazine";
+		Color = Color3.new(1, 0.5, 0);
+	};
+	shell = {
+		WSName = "Shell";
+		Showname = "Shotgun Shell";
+		Color = Color3.new(1, 0.5, 0);
+	};
+	sniperbullet = {
+		WSName = "SniperBullet";
+		Showname = "Sniper Bullet";
+		Color = Color3.new(1, 0.5, 0);
+	};
+	magnumround = {
+		WSName = "MagnumRound";
+		Showname = "Magnum Round";
+		Color = Color3.new(1, 0.5, 0);
+	};
+	grenade = {
+		WSName = "Grenade";
+		Showname = "Grenade";
+		Color = Color3.new(1, 0.5, 0);
+	};
+}
+
+local FreeYawn = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Berg = Instance.new("TextLabel")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local Alamont = Instance.new("TextLabel")
+local Halfwell = Instance.new("TextLabel")
+
+FreeYawn.Name = "Free :Yawn:"
+FreeYawn.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+FreeYawn.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+FreeYawn.DisplayOrder = 99999999
+FreeYawn.ResetOnSpawn = false
+
+Frame.Parent = FreeYawn
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 0.900
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.010251631, 0, 0.781676412, 0)
+Frame.Size = UDim2.new(0.279589921, 0, 0.195581555, 0)
+
+Berg.Name = "Berg"
+Berg.Parent = Frame
+Berg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Berg.BackgroundTransparency = 1.000
+Berg.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Berg.BorderSizePixel = 0
+Berg.Size = UDim2.new(0, 300, 0, 34)
+Berg.Font = Enum.Font.Cartoon
+Berg.Text = "Bergmann: ?"
+Berg.TextColor3 = Color3.fromRGB(0, 0, 0)
+Berg.TextScaled = true
+Berg.TextSize = 14.000
+Berg.TextWrapped = true
+Berg.TextXAlignment = Enum.TextXAlignment.Left
+
+UIAspectRatioConstraint.Parent = Frame
+UIAspectRatioConstraint.AspectRatio = 3.000
+
+Alamont.Name = "Alamont"
+Alamont.Parent = Frame
+Alamont.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Alamont.BackgroundTransparency = 1.000
+Alamont.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Alamont.BorderSizePixel = 0
+Alamont.Position = UDim2.new(0, 0, 0.670000017, 0)
+Alamont.Size = UDim2.new(0, 300, 0, 33)
+Alamont.Font = Enum.Font.Cartoon
+Alamont.Text = "Alamont: ?"
+Alamont.TextColor3 = Color3.fromRGB(0, 0, 0)
+Alamont.TextScaled = true
+Alamont.TextSize = 14.000
+Alamont.TextWrapped = true
+Alamont.TextXAlignment = Enum.TextXAlignment.Left
+
+Halfwell.Name = "Halfwell"
+Halfwell.Parent = Frame
+Halfwell.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Halfwell.BackgroundTransparency = 1.000
+Halfwell.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Halfwell.BorderSizePixel = 0
+Halfwell.Position = UDim2.new(0, 0, 0.340000004, 0)
+Halfwell.Size = UDim2.new(0, 300, 0, 33)
+Halfwell.Font = Enum.Font.Cartoon
+Halfwell.Text = "Halfwell: ?"
+Halfwell.TextColor3 = Color3.fromRGB(0, 0, 0)
+Halfwell.TextScaled = true
+Halfwell.TextSize = 14.000
+Halfwell.TextWrapped = true
+Halfwell.TextXAlignment = Enum.TextXAlignment.Left
+
+FreeYawn.Enabled = false
+
+local bases = {
+	Bergmann = "3";
+	Halfwell = "2";
+	Alamont = "1"
+}
+
+local colors = {
+	Cash = {
+		Name = "Cash";
+		Color = Color3.new(0, 1, 0);
+	};
+	FakeCash = {
+		Name = "FakeCash";
+		Color = Color3.new(1, 0, 0);
+	};
+	Project = {
+		Name = "Disk";
+		Color = Color3.new(1, 1, 0);
+	};
+	Sedan = {
+		Name = "Sedan";
+		Color = Color3.new(0.576471, 0.152941, 1)
+	};
+	Phone = {
+		Name = "Phone";
+		Color = Color3.new(0, 0.0156863, 1)
+	}
+}
+
+local function addgui(obj)
+		if obj.Name == "Briefcase" and obj:IsA("Model") then
+			local cash = 0
+			local fakecash = 0
+			local disc = "None"
+			local gui
+			for i, v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+				if v:IsA("BillboardGui") and v.Adornee == obj then
+					gui = v
+				end
+			end
+			if gui then
+				if enabled then
+					for i, v in pairs(obj:GetChildren()) do
+						for i, g in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+							if g:IsA("BillboardGui") and g.Adornee == v then
+								g:Destroy()
+							end
+						end
+						local diskname
+						if v.Name == "Cash" and v:IsA("Model") then
+							cash = cash + 1 or 1
+						elseif  v.Name == "FakeCash" and v:IsA("Model") then
+							fakecash = fakecash + 1 or 1
+						elseif v.Name == "Disk" and v:IsA("Model") then
+							if v:FindFirstChild("Note") then
+								diskname = v.Note.SurfaceGui.TextLabel.Text
+							else
+								diskname = "Unidentified"
+							end
+							diskname = diskname or "Unidentified"
+							disc = "Disk ("..diskname..")"
+						end
+					end
+					gui.MainFrame.Cash.Text = "Cash: "..tostring(cash)
+					gui.MainFrame.FakeCash.Text = "FakeCash: "..tostring(fakecash)
+					gui.MainFrame.Disc.Text = "Disc: "..tostring(disc)
+					if obj:FindFirstChild("Grenade") then
+						gui.MainFrame.Briefcase.Text = "Briefcase (RIGGED)"
+					end
+				else
+					gui:Destroy()
+				end
+			elseif not gui and enabled then
+				local SkiddedLb = Instance.new("BillboardGui")
+				local MainFrame = Instance.new("Frame")
+				local Briefcase = Instance.new("TextLabel")
+				local Cash = Instance.new("TextLabel")
+				local FakeCash = Instance.new("TextLabel")
+				local Disc = Instance.new("TextLabel")
+
+				SkiddedLb.Name = "SkiddedLb"
+				SkiddedLb.Parent = game.Players.LocalPlayer.PlayerGui
+				SkiddedLb.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+				SkiddedLb.ResetOnSpawn = false
+				SkiddedLb.AlwaysOnTop = true
+				SkiddedLb.Size = UDim2.new(17,0,8,0)
+				SkiddedLb.Adornee = obj
+
+				MainFrame.Name = "MainFrame"
+				MainFrame.Parent = SkiddedLb
+				MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				MainFrame.BackgroundTransparency = 1.000
+				MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				MainFrame.BorderSizePixel = 0
+				MainFrame.Size = UDim2.new(1, 0, 1, 0)
+
+				Briefcase.Name = "Briefcase"
+				Briefcase.Parent = MainFrame
+				Briefcase.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Briefcase.BackgroundTransparency = 1.000
+				Briefcase.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				Briefcase.BorderSizePixel = 0
+				Briefcase.Size = UDim2.new(1, 0, 0.400000006, 0)
+				Briefcase.Font = Enum.Font.Cartoon
+				Briefcase.Text = "Briefcase"
+				Briefcase.TextColor3 = Color3.fromRGB(0, 0, 0)
+				Briefcase.TextScaled = true
+				Briefcase.TextSize = 14.000
+				Briefcase.TextWrapped = true
+
+				Cash.Name = "Cash"
+				Cash.Parent = MainFrame
+				Cash.BackgroundColor3 = Color3.fromRGB(105, 255, 88)
+				Cash.BackgroundTransparency = 1.000
+				Cash.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				Cash.BorderSizePixel = 0
+				Cash.Position = UDim2.new(0, 0, 0.400000006, 0)
+				Cash.Size = UDim2.new(1, 0, 0.200000003, 0)
+				Cash.Font = Enum.Font.Cartoon
+				Cash.Text = "Stacks: X"
+				Cash.TextColor3 = Color3.fromRGB(0, 255, 0)
+				Cash.TextScaled = true
+				Cash.TextSize = 14.000
+				Cash.TextWrapped = true
+
+				FakeCash.Name = "FakeCash"
+				FakeCash.Parent = MainFrame
+				FakeCash.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				FakeCash.BackgroundTransparency = 1.000
+				FakeCash.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				FakeCash.BorderSizePixel = 0
+				FakeCash.Position = UDim2.new(0, 0, 0.600000024, 0)
+				FakeCash.Size = UDim2.new(1, 0, 0.200000003, 0)
+				FakeCash.Font = Enum.Font.Cartoon
+				FakeCash.Text = "Fake Stacks: X"
+				FakeCash.TextColor3 = Color3.fromRGB(255, 0, 0)
+				FakeCash.TextScaled = true
+				FakeCash.TextSize = 14.000
+				FakeCash.TextWrapped = true
+
+				Disc.Name = "Disc"
+				Disc.Parent = MainFrame
+				Disc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Disc.BackgroundTransparency = 1.000
+				Disc.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				Disc.BorderSizePixel = 0
+				Disc.Position = UDim2.new(0, 0, 0.800000012, 0)
+				Disc.Size = UDim2.new(1, 0, 0.200000003, 0)
+				Disc.Font = Enum.Font.Cartoon
+				Disc.Text = "Disk: None"
+				Disc.TextColor3 = Color3.fromRGB(255, 238, 0)
+				Disc.TextScaled = true
+				Disc.TextSize = 14.000
+				Disc.TextWrapped = true
+
+				for i, v in pairs(obj:GetChildren()) do
+					if v.Name == "Cash" and v:IsA("Group") then
+						cash = cash + 1 or 1
+					elseif  v.Name == "FakeCash" and v:IsA("Group") then
+						fakecash = fakecash + 1 or 1
+					elseif v.Name == "Disk" and v:IsA("Group") then
+						local diskname
+						if v:FindFirstChild("Note") then
+							diskname = v:FindFirstChild("Note").SurfaceGui.TextLabel.Text
+						else
+							diskname = "Unidentified"
+						end
+						disc = "Disk ("..diskname..")"
+					end
+				end
+
+				gui = SkiddedLb
+
+				gui.MainFrame.Cash.Text = "Cash: "..tostring(cash)
+				gui.MainFrame.FakeCash.Text = "FakeCash: "..tostring(fakecash)
+				gui.MainFrame.Disc.Text = "Disk: "..tostring(disc)
+			end
+		elseif obj.Name == "FakeCash" or obj.Name == "Cash" or obj.Name == "Sedan" or obj.Name == "Phone" and obj:IsA("Model") then
+			local gui
+			for i, v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+				if v:IsA("BillboardGui") and v.Adornee == obj then
+					gui = v
+				end
+			end
+			local picked
+			for i, v in pairs(colors) do
+				if v.Name == obj.Name then
+					picked = v
+				end
+			end
+			if gui then
+				if enabled then
+
+				else
+					gui:Destroy()
+				end
+			elseif not gui and enabled then
+				local SkiddedLb = Instance.new("BillboardGui")
+				local MainFrame = Instance.new("Frame")
+				local TextLabel = Instance.new("TextLabel")
+
+				SkiddedLb.Name = "SkiddedLb"
+				SkiddedLb.Parent = game.Players.LocalPlayer.PlayerGui
+				SkiddedLb.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+				SkiddedLb.Active = true
+				SkiddedLb.ResetOnSpawn = false
+				SkiddedLb.AlwaysOnTop = true
+				SkiddedLb.LightInfluence = 1.000
+				SkiddedLb.Size = UDim2.new(5, 0, 1.7, 0)
+				SkiddedLb.Adornee = obj
+
+				MainFrame.Name = "MainFrame"
+				MainFrame.Parent = SkiddedLb
+				MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				MainFrame.BackgroundTransparency = 1.000
+				MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				MainFrame.BorderSizePixel = 0
+				MainFrame.Size = UDim2.new(1, 0, 1, 0)
+
+				TextLabel.Parent = MainFrame
+				TextLabel.BackgroundColor3 = Color3.fromRGB(17, 255, 0)
+				TextLabel.BackgroundTransparency = 1.000
+				TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				TextLabel.BorderSizePixel = 0
+				TextLabel.Size = UDim2.new(1, 0, 1, 0)
+				TextLabel.Font = Enum.Font.Cartoon
+				TextLabel.Text = picked.Name
+				TextLabel.TextColor3 = picked.Color
+				TextLabel.TextScaled = true
+				TextLabel.TextSize = 14.000
+				TextLabel.TextWrapped = true
+			end
+		elseif obj.Name == "Disk" and obj:IsA("Model") then
+			local gui
+			for i, v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+				if v:IsA("BillboardGui") and v.Adornee == obj then
+					gui = v
+				end
+			end
+			if gui then
+				if enabled then
+
+				else
+					gui:Destroy()
+				end
+			elseif not gui and enabled then
+				local SkiddedLb = Instance.new("BillboardGui")
+				local MainFrame = Instance.new("Frame")
+				local TextLabel = Instance.new("TextLabel")
+
+				SkiddedLb.Name = "SkiddedLb"
+				SkiddedLb.Parent = game.Players.LocalPlayer.PlayerGui
+				SkiddedLb.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+				SkiddedLb.Active = true
+				SkiddedLb.ResetOnSpawn = false
+				SkiddedLb.AlwaysOnTop = true
+				SkiddedLb.LightInfluence = 1.000
+				SkiddedLb.Size = UDim2.new(5, 0, 1.7, 0)
+				SkiddedLb.Adornee = obj
+
+				MainFrame.Name = "MainFrame"
+				MainFrame.Parent = SkiddedLb
+				MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				MainFrame.BackgroundTransparency = 1.000
+				MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				MainFrame.BorderSizePixel = 0
+				MainFrame.Size = UDim2.new(1, 0, 1, 0)
+
+				TextLabel.Parent = MainFrame
+				TextLabel.BackgroundColor3 = Color3.fromRGB(17, 255, 0)
+				TextLabel.BackgroundTransparency = 1.000
+				TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				TextLabel.BorderSizePixel = 0
+				TextLabel.Size = UDim2.new(1, 0, 1, 0)
+				TextLabel.Font = Enum.Font.Cartoon
+				local diskname
+				if obj:FindFirstChild("Note") then
+					diskname = obj.Note.SurfaceGui.TextLabel.Text
+				else
+					diskname = "Unidentified"
+				end
+				TextLabel.Text = "Disk ("..tostring(diskname)..")"
+				TextLabel.TextColor3 = Color3.new(1, 1, 0)
+				TextLabel.TextScaled = true
+				TextLabel.TextSize = 14.000
+				TextLabel.TextWrapped = true
+			end
+		end
+		for i, v in pairs(miscitems) do
+			if obj.Name == v.WSName then
+				local gui
+				for i, v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+					if v:IsA("BillboardGui") and v.Adornee == obj then
+						gui = v
+					end
+				end
+				if gui and not enabled then
+					gui:Destroy()
+
+				elseif not gui and enabled then
+
+					local SkiddedLb = Instance.new("BillboardGui")
+					local MainFrame = Instance.new("Frame")
+					local TextLabel = Instance.new("TextLabel")
+
+					SkiddedLb.Name = "SkiddedLb"
+					SkiddedLb.Parent = game.Players.LocalPlayer.PlayerGui
+					SkiddedLb.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+					SkiddedLb.Active = true
+					SkiddedLb.ResetOnSpawn = false
+					SkiddedLb.AlwaysOnTop = true
+					SkiddedLb.LightInfluence = 1.000
+					SkiddedLb.Size = UDim2.new(5, 0, 1.7, 0)
+					SkiddedLb.Adornee = obj
+
+					MainFrame.Name = "MainFrame"
+					MainFrame.Parent = SkiddedLb
+					MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+					MainFrame.BackgroundTransparency = 1.000
+					MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+					MainFrame.BorderSizePixel = 0
+					MainFrame.Size = UDim2.new(1, 0, 1, 0)
+
+					TextLabel.Parent = MainFrame
+					TextLabel.BackgroundColor3 = Color3.fromRGB(17, 255, 0)
+					TextLabel.BackgroundTransparency = 1.000
+					TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+					TextLabel.BorderSizePixel = 0
+					TextLabel.Size = UDim2.new(1, 0, 1, 0)
+					TextLabel.Font = Enum.Font.Cartoon
+					TextLabel.Text = v.Showname
+					TextLabel.TextColor3 = v.Color
+					TextLabel.TextScaled = true
+					TextLabel.TextSize = 14.000
+					TextLabel.TextWrapped = true
+
+				end
+			end
+		end
+	for i, v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+		if v.Name == "SkiddedLb" and v:IsA("BillboardGui") then
+			if v.Adornee and v.Adornee:IsDescendantOf(workspace) then
+			else
+				v:Destroy()
+			end
+		end
+	end
+end
+
+local function notif(msg)
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "ESP";
+		Text = msg;
+		Duration = 3
+	})
+end
+
+game.UserInputService.InputBegan:Connect(function(inp,gpe)
+	if not gpe and inp.KeyCode == Enum.KeyCode.J then
+		enabled = not enabled
+		notif("Esp is now "..tostring(enabled).."!")
+	end
+end)
+
+while true do
+	for i, v in pairs(workspace:GetChildren()) do
+		addgui(v)
+	end
+	if enabled then
+		if workspace:FindFirstChild("CurrentMap") then
+			local thingies = {
+				DD = {
+					Name = "Dead Drop";
+					Extra = nil;
+					Show = " DeD > Dead Drop, Nothing Counts"
+				};
+				TRSB = {
+					Name = "Transaction";
+					Extra = "Use the";
+					Show = " TRS > Has Cash, Needs Disk"
+				};
+				TRSS = {
+					Name = "Transaction";
+					Extra = "You have";
+					Show = " TRS > Has Disk, Needs Cash"
+				};
+				TRSAN = {
+					Name = "Transaction";
+					Extra = "Acquire the";
+					Show = " TRS > Needs Disk, Has Nothing"
+				};
+				MISS = {
+					Name = "Missin";
+					Extra = nil;
+					Show = " MISS >  No Team, Ignore"
+				};
+				ACQG = {
+					Name = "Acquisition";
+					Extra = "Acquire the";
+					Show = " ACQ > Grabs Project, Sells Or Keeps After"
+				};
+				ACQB = {
+					Name = "Acquisition";
+					Extra = "Use the";
+					Show = " ACQ > Buys Project That Was Grabbed"
+				};
+				DDS = {
+					Name = "Double Disk";
+					Extra = "You have";
+					Show = " DoD > Has Disk, 2 Disks Exist"
+				};
+				DDB = {
+					Name = "Double Disk";
+					Extra = "Use the";
+					Show = " DoD > Needs To Buy 2 Disks, Has More Than Normal Cash"
+				}
+			}
+			local bases = workspace.CurrentMap.Round.Core.Bases
+			local text1 = string.split(bases:FindFirstChild("3").MissionBoard.SurfaceGui.MissionText.Text, ":>")
+			local text2 = string.split(bases:FindFirstChild("2").MissionBoard.SurfaceGui.MissionText.Text, ":>")
+			local text3 = string.split(bases:FindFirstChild("1").MissionBoard.SurfaceGui.MissionText.Text, ":>")
+
+			-- Trim spaces from extracted parts
+			local trimmedText1 = string.gsub(text1[2] or "", "^%s*(.-)%s*$", "%1")
+			local trimmedText2 = string.gsub(text2[2] or "", "^%s*(.-)%s*$", "%1")
+			local trimmedText3 = string.gsub(text3[2] or "", "^%s*(.-)%s*$", "%1")
+
+			-- Now split
+			local extra1 = string.split(trimmedText1, " ")
+			local extra2 = string.split(trimmedText2, " ")
+			local extra3 = string.split(trimmedText3, " ")
+
+			text1 = text1[1]
+			text2 = text2[1]
+			text3 = text3[1]
+
+			-- Ensure there are at least two words before indexing
+			extra1 = (extra1[1] or "") .. " " .. (extra1[2] or "")
+			extra2 = (extra2[1] or "") .. " " .. (extra2[2] or "")
+			extra3 = (extra3[1] or "") .. " " .. (extra3[2] or "")
+
+			for i, v in pairs(thingies) do
+				if v.Name:lower() == text1:lower() then
+					if v.Extra then
+						if v.Extra:lower() == extra1:lower() then
+							Berg.Text = "Bergmann:" .. v.Show
+						end
+					else
+						Berg.Text = "Bergmann:" .. v.Show
+					end
+				end
+
+				if v.Name:lower() == text2:lower() then
+					if v.Extra then
+						if v.Extra:lower() == extra2:lower() then
+							Halfwell.Text = "Halfwell:" .. v.Show
+						end
+					else
+						Halfwell.Text = "Halfwell:" .. v.Show
+					end
+				end
+
+				if v.Name:lower() == text3:lower() then
+					if v.Extra then
+						if v.Extra:lower() == extra3:lower() then
+							Alamont.Text = "Alamont:" .. v.Show
+						end
+					else
+						Alamont.Text = "Alamont:" .. v.Show
+					end
+				end
+			end
+			FreeYawn.Enabled = true
+		end
+	elseif not enabled then
+		FreeYawn.Enabled = false
+	end
+	wait(refreshrate)
+end
