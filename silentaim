@@ -1,0 +1,48 @@
+local Players = game:GetService('Players');
+local Workspace = game:GetService('Workspace');
+local ReplicatedStorage = game:GetService('ReplicatedStorage');
+local UserInputService = game:GetService('UserInputService');
+local LocalPlayer = Players.LocalPlayer;
+local Camera = Workspace.CurrentCamera;
+
+local Bullet = require(ReplicatedStorage.Components.BulletFactory);
+
+--// More notable stuff if you want to add to it
+-- local CanBulletPassThrough = Bullet.CanBulletPassThrough;
+-- local CalcArc = Bullet.CalcArc;
+
+function GetClosestToMouse()
+    local MouseLocation = UserInputService:GetMouseLocation();
+    local ClosestPlayer = nil;
+    local ClosestCharacter = nil;
+    local ClosestDistance = math.huge;
+
+    for _, Player in next, Players:GetPlayers() do
+        if (Player ~= LocalPlayer and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+            local Character = Player.Character;
+            local RootPart = Character.HumanoidRootPart;
+        
+            local ScreenPosition, OnScreen = Camera:WorldToScreenPoint(RootPart.Position);
+            if (OnScreen) then
+                local Distance = (Vector2.new(ScreenPosition.X, ScreenPosition.Y) - MouseLocation).Magnitude;
+                if (Distance < ClosestDistance) then
+                    ClosestDistance = Distance;
+                    ClosestPlayer = Player;
+                    ClosestCharacter = Character;
+                end;
+            end;
+        end;
+    end;
+
+    return ClosestPlayer, ClosestCharacter;
+end;
+
+local OldFire; OldFire = hookfunction(Bullet.Fire, function(BulletId, Origin, BulletPos, ...) -- ... incase they add params
+    local Player, Character = GetClosestToMouse();
+    if (Player and Character and Character:FindFirstChild('Head')) then
+        Origin = (Character.Head.CFrame * CFrame.new(0,0,1)).p; -- wallbang :p
+        BulletPos = (Character.Head.Position - Origin).Unit * 10000; -- istant bullets :O
+    end;
+
+    return OldFire(BulletId, Origin, BulletPos, ...);
+end);
