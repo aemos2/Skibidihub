@@ -1,0 +1,974 @@
+local v8 = loadstring(game:HttpGet('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Splix'))();
+local v9 = v8:new({
+    textsize = 13.5,
+    font = Enum.Font.RobotoMono,
+    name = 'Skibidi Hub [SOLARA] | Fight In A School | Official Skibidi Hub Server : gg/dtneYN6NTY',
+    color = Color3.fromRGB(50, 58, 81)
+});
+local v10 = v9:page({
+    name = 'Main'
+});
+local v11 = v10:section({
+    name = 'Fighting Options',
+    side = 'left',
+    size = 200
+});
+local v12 = game.Players.LocalPlayer;
+local v13 = v12.Name;
+local v14 = v12:WaitForChild('Backpack');
+local v15 = game.Workspace:WaitForChild('Live'):WaitForChild(v13);
+local v16 = {};
+local v17 = false;
+local v18 = 1;
+local function v19(v39, v40)
+    v39:SetAttribute('Speed', v40);
+end
+local function v20(v41)
+    if not v16[v41] then
+        v16[v41] = v41:GetAttribute('Speed');
+    end
+end
+local function v21(v42)
+    if v16[v42] then
+        v42:SetAttribute('Speed', v16[v42]);
+    end
+end
+v14.ChildAdded:Connect(function(v43)
+    if (v43.Name == 'Fight') then
+        v20(v43);
+        if v17 then
+            v19(v43, v18);
+        end
+    end
+end);
+v15.ChildAdded:Connect(function(v44)
+    if (v44.Name == 'Fight') then
+        local v120 = 0;
+        while true do
+            if (v120 == 0) then
+                v20(v44);
+                if v17 then
+                    v19(v44, v18);
+                end
+                break
+            end
+        end
+    end
+end);
+local v22 = v14:FindFirstChild('Fight');
+if v22 then
+    v20(v22);
+    if v17 then
+        v19(v22, v18);
+    end
+end
+local v23 = v15:FindFirstChild('Fight');
+if v23 then
+    local v104 = 0;
+    local v105;
+    while true do
+        if (v104 == (0)) then
+            v105 = 0;
+            while true do
+                if (v105 == 0) then
+                    v20(v23);
+                    if v17 then
+                        v19(v23, v18);
+                    end
+                    break
+                end
+            end
+            break
+        end
+    end
+end
+v11:toggle({
+    name = 'Fighting Speed',
+    def = false,
+    callback = function(v45)
+        local v46 = 0;
+        local v47;
+        while true do
+            if (v46 == 0) then
+                v47 = 0;
+                while true do
+                    if (v47 == (0)) then
+                        v17 = v45;
+                        if v17 then
+                            local v178 = 0;
+                            local v179;
+                            local v180;
+                            while true do
+                                if ((0) == v178) then
+                                    v179 = v14:FindFirstChild('Fight');
+                                    if v179 then
+                                        v19(v179, v18);
+                                    end
+                                    v178 = 1;
+                                end
+                                if (v178 == 1) then
+                                    v180 = v15:FindFirstChild('Fight');
+                                    if v180 then
+                                        v19(v180, v18);
+                                    end
+                                    break
+                                end
+                            end
+                        else
+                            for v183, v184 in pairs(v16) do
+                                if (v183 and v183.Parent) then
+                                    v21(v183);
+                                end
+                            end
+                        end
+                        break
+                    end
+                end
+                break
+            end
+        end
+    end
+});
+v11:slider({
+    name = 'Fighting Speed Multiplier',
+    def = 1,
+    max = 5,
+    min = 1,
+    rounding = false,
+    ticking = false,
+    measuring = "",
+    callback = function(v48)
+        local v49 = 0;
+        while true do
+            if (v49 == (0)) then
+                v18 = v48;
+                if v17 then
+                    local v148 = v14:FindFirstChild('Fight');
+                    if v148 then
+                        v19(v148, v18);
+                    end
+                    local v149 = v15:FindFirstChild('Fight');
+                    if v149 then
+                        v19(v149, v18);
+                    end
+                end
+                break
+            end
+        end
+    end
+});
+local v12 = game.Players.LocalPlayer;
+local v13 = v12.Name;
+local v14 = v12:WaitForChild('Backpack');
+local v15 = game.Workspace:WaitForChild('Live'):WaitForChild(v13);
+local v24 = {};
+local function v25(v50, v51)
+    if v50:GetAttribute('Style') then
+        v50:SetAttribute('Style', v51);
+    end
+end
+local function v26(v52)
+    if (v52:GetAttribute('Style') and not v24[v52]) then
+        v24[v52] = v52:GetAttribute('Style');
+    end
+end
+v14.ChildAdded:Connect(function(v53)
+    if (v53.Name == 'Fight') then
+        v26(v53);
+        if v17 then
+            v25(v53, 'Striker');
+        end
+    end
+end);
+v15.ChildAdded:Connect(function(v54)
+    if (v54.Name == 'Fight') then
+        local v122 = 0;
+        while true do
+            if (v122 == 0) then
+                v26(v54);
+                if v17 then
+                    v25(v54, 'Striker');
+                end
+                break
+            end
+        end
+    end
+end);
+local v22 = v14:FindFirstChild('Fight');
+if v22 then
+    local v106 = 0;
+    local v107;
+    while true do
+        if (v106 == (0)) then
+            v107 = 0;
+            while true do
+                if (v107 == (0)) then
+                    v26(v22);
+                    if v17 then
+                        v25(v22, 'Striker');
+                    end
+                    break
+                end
+            end
+            break
+        end
+    end
+end
+local v23 = v15:FindFirstChild('Fight');
+if v23 then
+    v26(v23);
+    if v17 then
+        v25(v23, 'Striker');
+    end
+end
+local v17 = false;
+v11:toggle({
+    name = 'Striker Style',
+    def = false,
+    callback = function(v55)
+        local v56 = 0;
+        while true do
+            if (v56 == 0) then
+                v17 = v55;
+                if v17 then
+                    local v150 = 0;
+                    local v151;
+                    local v152;
+                    while true do
+                        if (v150 == 0) then
+                            local v181 = 0;
+                            while true do
+                                if (v181 == (0)) then
+                                    v151 = v14:FindFirstChild('Fight');
+                                    if v151 then
+                                        v25(v151, 'Striker');
+                                    end
+                                    v181 = 1;
+                                end
+                                if (v181 == (1)) then
+                                    v150 = 1;
+                                    break
+                                end
+                            end
+                        end
+                        if ((1) == v150) then
+                            v152 = v15:FindFirstChild('Fight');
+                            if v152 then
+                                v25(v152, 'Striker');
+                            end
+                            break
+                        end
+                    end
+                else
+                    for v166, v167 in pairs(v24) do
+                        if (v166 and v166.Parent) then
+                            v166:SetAttribute('Style', v167);
+                        end
+                    end
+                end
+                break
+            end
+        end
+    end
+});
+local function v25(v57, v58)
+    if v57:GetAttribute('Style') then
+        v57:SetAttribute('Style', v58);
+    end
+end
+local function v26(v59)
+    if (v59:GetAttribute('Style') and not v24[v59]) then
+        v24[v59] = v59:GetAttribute('Style');
+    end
+end
+v14.ChildAdded:Connect(function(v60)
+    if (v60.Name == 'Fight') then
+        local v124 = 0;
+        local v125;
+        while true do
+            if (v124 == (0)) then
+                v125 = 0;
+                while true do
+                    if ((0) == v125) then
+                        v26(v60);
+                        if v17 then
+                            v25(v60, 'Boxer');
+                        end
+                        break
+                    end
+                end
+                break
+            end
+        end
+    end
+end);
+v15.ChildAdded:Connect(function(v61)
+    if (v61.Name == 'Fight') then
+        local v126 = 0;
+        while true do
+            if (v126 == 0) then
+                v26(v61);
+                if v17 then
+                    v25(v61, 'Boxer');
+                end
+                break
+            end
+        end
+    end
+end);
+local v22 = v14:FindFirstChild('Fight');
+if v22 then
+    local v108 = 0;
+    while true do
+        if (v108 == (0)) then
+            v26(v22);
+            if v17 then
+                v25(v22, 'Boxer');
+            end
+            break
+        end
+    end
+end
+local v23 = v15:FindFirstChild('Fight');
+if v23 then
+    local v109 = 0;
+    local v110;
+    while true do
+        if (v109 == 0) then
+            v110 = 0;
+            while true do
+                if (v110 == 0) then
+                    v26(v23);
+                    if v17 then
+                        v25(v23, 'Boxer');
+                    end
+                    break
+                end
+            end
+            break
+        end
+    end
+end
+local v17 = false;
+v11:toggle({
+    name = 'Boxer Style',
+    def = false,
+    callback = function(v62)
+        local v63 = 0;
+        while true do
+            if (v63 == (0)) then
+                v17 = v62;
+                if v17 then
+                    local v153 = 0;
+                    local v154;
+                    local v155;
+                    while true do
+                        if (v153 == (1)) then
+                            v155 = v15:FindFirstChild('Fight');
+                            if v155 then
+                                v25(v155, 'Boxer');
+                            end
+                            break
+                        end
+                        if (v153 == 0) then
+                            v154 = v14:FindFirstChild('Fight');
+                            if v154 then
+                                v25(v154, 'Boxer');
+                            end
+                            v153 = 1;
+                        end
+                    end
+                else
+                    for v168, v169 in pairs(v24) do
+                        if (v168 and v168.Parent) then
+                            v168:SetAttribute('Style', v169);
+                        end
+                    end
+                end
+                break
+            end
+        end
+    end
+});
+local function v25(v64, v65)
+    if v64:GetAttribute('Style') then
+        v64:SetAttribute('Style', v65);
+    end
+end
+local function v26(v66)
+    if (v66:GetAttribute('Style') and not v24[v66]) then
+        v24[v66] = v66:GetAttribute('Style');
+    end
+end
+v14.ChildAdded:Connect(function(v67)
+    if (v67.Name == 'Fight') then
+        local v128 = 0;
+        local v129;
+        while true do
+            if ((0) == v128) then
+                v129 = 0;
+                while true do
+                    if (v129 == (0)) then
+                        v26(v67);
+                        if v17 then
+                            v25(v67, 'Slap Boxer');
+                        end
+                        break
+                    end
+                end
+                break
+            end
+        end
+    end
+end);
+v15.ChildAdded:Connect(function(v68)
+    if (v68.Name == 'Fight') then
+        local v130 = 0;
+        while true do
+            if (v130 == (0)) then
+                v26(v68);
+                if v17 then
+                    v25(v68, 'Slap Boxer');
+                end
+                break
+            end
+        end
+    end
+end);
+local v22 = v14:FindFirstChild('Fight');
+if v22 then
+    v26(v22);
+    if v17 then
+        v25(v22, 'Slap Boxer');
+    end
+end
+local v23 = v15:FindFirstChild('Fight');
+if v23 then
+    v26(v23);
+    if v17 then
+        v25(v23, 'Slap Boxer');
+    end
+end
+local v17 = false;
+v11:toggle({
+    name = 'Slapboxer Style',
+    def = false,
+    callback = function(v69)
+        local v70 = 0;
+        while true do
+            if (v70 == 0) then
+                v17 = v69;
+                if v17 then
+                    local v156 = v14:FindFirstChild('Fight');
+                    if v156 then
+                        v25(v156, 'Slap Boxer');
+                    end
+                    local v157 = v15:FindFirstChild('Fight');
+                    if v157 then
+                        v25(v157, 'Slap Boxer');
+                    end
+                else
+                    for v170, v171 in pairs(v24) do
+                        if (v170 and v170.Parent) then
+                            v170:SetAttribute('Style', v171);
+                        end
+                    end
+                end
+                break
+            end
+        end
+    end
+});
+local function v25(v71, v72)
+    if v71:GetAttribute('Style') then
+        v71:SetAttribute('Style', v72);
+    end
+end
+local function v26(v73)
+    if (v73:GetAttribute('Style') and not v24[v73]) then
+        v24[v73] = v73:GetAttribute('Style');
+    end
+end
+v14.ChildAdded:Connect(function(v74)
+    if (v74.Name == 'Fight') then
+        local v132 = 0;
+        while true do
+            if (0 == v132) then
+                v26(v74);
+                if v17 then
+                    v25(v74, 'Peak A Boo');
+                end
+                break
+            end
+        end
+    end
+end);
+v15.ChildAdded:Connect(function(v75)
+    if (v75.Name == 'Fight') then
+        local v133 = 0;
+        while true do
+            if (v133 == (0)) then
+                v26(v75);
+                if v17 then
+                    v25(v75, 'Peak A Boo');
+                end
+                break
+            end
+        end
+    end
+end);
+local v22 = v14:FindFirstChild('Fight');
+if v22 then
+    local v111 = 0;
+    while true do
+        if ((0) == v111) then
+            v26(v22);
+            if v17 then
+                v25(v22, 'Peak A Boo');
+            end
+            break
+        end
+    end
+end
+local v23 = v15:FindFirstChild('Fight');
+if v23 then
+    v26(v23);
+    if v17 then
+        v25(v23, 'Peak A Boo');
+    end
+end
+local v17 = false;
+v11:toggle({
+    name = 'Peak-A-Boo Style',
+    def = false,
+    callback = function(v76)
+        v17 = v76;
+        if v17 then
+            local v134 = 0;
+            local v135;
+            local v136;
+            while true do
+                if (v134 == (1)) then
+                    v136 = v15:FindFirstChild('Fight');
+                    if v136 then
+                        v25(v136, 'Peak A Boo');
+                    end
+                    break
+                end
+                if (v134 == (0)) then
+                    v135 = v14:FindFirstChild('Fight');
+                    if v135 then
+                        v25(v135, 'Peak A Boo');
+                    end
+                    v134 = 1;
+                end
+            end
+        else
+            for v144, v145 in pairs(v24) do
+                if (v144 and v144.Parent) then
+                    v144:SetAttribute('Style', v145);
+                end
+            end
+        end
+    end
+});
+local function v25(v77, v78)
+    if v77:GetAttribute('Style') then
+        v77:SetAttribute('Style', v78);
+    end
+end
+local function v26(v79)
+    if (v79:GetAttribute('Style') and not v24[v79]) then
+        v24[v79] = v79:GetAttribute('Style');
+    end
+end
+v14.ChildAdded:Connect(function(v80)
+    if (v80.Name == 'Fight') then
+        v26(v80);
+        if v17 then
+            v25(v80, 'Kicker');
+        end
+    end
+end);
+v15.ChildAdded:Connect(function(v81)
+    if (v81.Name == 'Fight') then
+        local v138 = 0;
+        while true do
+            if (v138 == 0) then
+                v26(v81);
+                if v17 then
+                    v25(v81, 'Kicker');
+                end
+                break
+            end
+        end
+    end
+end);
+local v22 = v14:FindFirstChild('Fight');
+if v22 then
+    local v112 = 0;
+    while true do
+        if (v112 == (0)) then
+            v26(v22);
+            if v17 then
+                v25(v22, 'Kicker');
+            end
+            break
+        end
+    end
+end
+local v23 = v15:FindFirstChild('Fight');
+if v23 then
+    v26(v23);
+    if v17 then
+        v25(v23, 'Kicker');
+    end
+end
+local v17 = false;
+v11:toggle({
+    name = 'Kicker Style',
+    def = false,
+    callback = function(v82)
+        local v83 = 0;
+        while true do
+            if (v83 == 0) then
+                v17 = v82;
+                if v17 then
+                    local v158 = v14:FindFirstChild('Fight');
+                    if v158 then
+                        v25(v158, 'Kicker');
+                    end
+                    local v159 = v15:FindFirstChild('Fight');
+                    if v159 then
+                        v25(v159, 'Kicker');
+                    end
+                else
+                    for v172, v173 in pairs(v24) do
+                        if (v172 and v172.Parent) then
+                            v172:SetAttribute('Style', v173);
+                        end
+                    end
+                end
+                break
+            end
+        end
+    end
+});
+local function v25(v84, v85)
+    if v84:GetAttribute('Style') then
+        v84:SetAttribute('Style', v85);
+    end
+end
+local function v26(v86)
+    if (v86:GetAttribute('Style') and not v24[v86]) then
+        v24[v86] = v86:GetAttribute('Style');
+    end
+end
+v14.ChildAdded:Connect(function(v87)
+    if (v87.Name == 'Fight') then
+        v26(v87);
+        if v17 then
+            v25(v87, 'Ninja');
+        end
+    end
+end);
+v15.ChildAdded:Connect(function(v88)
+    if (v88.Name == 'Fight') then
+        local v140 = 0;
+        local v141;
+        while true do
+            if (v140 == (0)) then
+                v141 = 0;
+                while true do
+                    if (v141 == (0)) then
+                        v26(v88);
+                        if v17 then
+                            v25(v88, 'Ninja');
+                        end
+                        break
+                    end
+                end
+                break
+            end
+        end
+    end
+end);
+local v22 = v14:FindFirstChild('Fight');
+if v22 then
+    v26(v22);
+    if v17 then
+        v25(v22, 'Ninja');
+    end
+end
+local v23 = v15:FindFirstChild('Fight');
+if v23 then
+    local v113 = 0;
+    local v114;
+    while true do
+        if ((0) == v113) then
+            v114 = 0;
+            while true do
+                if (v114 == (0)) then
+                    v26(v23);
+                    if v17 then
+                        v25(v23, 'Ninja');
+                    end
+                    break
+                end
+            end
+            break
+        end
+    end
+end
+local v17 = false;
+v11:toggle({
+    name = 'Ninja Style',
+    def = false,
+    callback = function(v89)
+        local v90 = 0;
+        while true do
+            if (v90 == (0)) then
+                v17 = v89;
+                if v17 then
+                    local v160 = 0;
+                    local v161;
+                    local v162;
+                    while true do
+                        if (v160 == (1)) then
+                            v162 = v15:FindFirstChild('Fight');
+                            if v162 then
+                                v25(v162, 'Ninja');
+                            end
+                            break
+                        end
+                        if ((0) == v160) then
+                            local v182 = 0;
+                            while true do
+                                if ((1) == v182) then
+                                    v160 = 1;
+                                    break
+                                end
+                                if (v182 == (0)) then
+                                    v161 = v14:FindFirstChild('Fight');
+                                    if v161 then
+                                        v25(v161, 'Ninja');
+                                    end
+                                    v182 = 1;
+                                end
+                            end
+                        end
+                    end
+                else
+                    for v174, v175 in pairs(v24) do
+                        if (v174 and v174.Parent) then
+                            v174:SetAttribute('Style', v175);
+                        end
+                    end
+                end
+                break
+            end
+        end
+    end
+});
+local v27 = false;
+local v28 = 1;
+local function v29()
+    if v27 then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (10) * v28 ;
+    else
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 10;
+    end
+end
+local function v30(v91)
+    local v92 = 0;
+    while true do
+        if (v92 == (0)) then
+            v27 = v91;
+            v29();
+            break
+        end
+    end
+end
+local function v31(v93)
+    v28 = v93;
+    v29();
+end
+local function v32(v94)
+    if v27 then
+        v29();
+    end
+end
+game.Players.LocalPlayer.CharacterAdded:Connect(v32);
+local v33 = v10:section({
+    name = 'Movement Options',
+    side = 'right',
+    size = 80
+});
+v33:toggle({
+    name = 'Walkspeed Multiplier',
+    def = false,
+    callback = v30
+});
+v33:slider({
+    name = 'Walkspeed Multiplier',
+    def = 1,
+    max = 5,
+    min = 1,
+    rounding = false,
+    ticking = false,
+    measuring = "",
+    callback = v31
+});
+v29();
+local v34 = v10:section({
+    name = 'Teleport Options',
+    side = 'left',
+    size = 80
+});
+v34:button({
+    name = 'Rejoin',
+    callback = function()
+        game:GetService('TeleportService'):Teleport(game.PlaceId, game:GetService('Players').LocalPlayer);
+    end
+});
+v34:button({
+    name = 'Server Hop',
+    callback = function()
+        local v95 = 0.1;
+        repeat
+            wait();
+        until game:IsLoaded()
+        wait(v95);
+        local v96 = game.PlaceId;
+        local v97 = {};
+        local v98 = "";
+        local v99 = os.date('!*t').hour;
+        local v100 = false;
+        function TPReturner()
+            local v115 = 0;
+            local v116;
+            local v117;
+            local v118;
+            while true do
+                if (v115 == (1)) then
+                    v117 = "";
+                    if (v116.nextPageCursor and (v116.nextPageCursor ~= 'null') and (v116.nextPageCursor ~= nil)) then
+                        v98 = v116.nextPageCursor;
+                    end
+                    v115 = 2;
+                end
+                if (v115 == 0) then
+                    local v147 = 0;
+                    while true do
+                        if (v147 == 1) then
+                            v115 = 1;
+                            break
+                        end
+                        if (v147 == (0)) then
+                            v116 = nil;
+                            if (v98 == "") then
+                                v116 = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. v96 .. '/servers/Public?sortOrder=Asc&limit=100'));
+                            else
+                                v116 = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. v96 .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. v98));
+                            end
+                            v147 = 1;
+                        end
+                    end
+                end
+                if (v115 == (2)) then
+                    v118 = 0;
+                    for v163, v164 in pairs(v116.data) do
+                        local v165 = true;
+                        v117 = tostring(v164.id);
+                        if (tonumber(v164.maxPlayers) > tonumber(v164.playing)) then
+                            local v177 = 0;
+                            while true do
+                                if (v177 == (0)) then
+                                    for v185, v186 in pairs(v97) do
+                                        local v187 = 0;
+                                        while true do
+                                            if (v187 == (0)) then
+                                                if (v118 ~= 0) then
+                                                    if (v117 == tostring(v186)) then
+                                                        v165 = false;
+                                                    end
+                                                elseif (tonumber(v99) ~= tonumber(v186)) then
+                                                    local v189 = pcall(function()
+                                                        local v190 = 0;
+                                                        while true do
+                                                            if (v190 == (1)) then
+                                                                table.insert(v97, v99);
+                                                                break
+                                                            end
+                                                            if (v190 == (0)) then
+                                                                delfile('NotSameServers.json');
+                                                                v97 = {};
+                                                                v190 = 1;
+                                                            end
+                                                        end
+                                                    end);
+                                                end
+                                                v118 = v118 + 1 ;
+                                                break
+                                            end
+                                        end
+                                    end
+                                    if (v165 == true) then
+                                        local v188 = 0;
+                                        while true do
+                                            if (v188 == (0)) then
+                                                table.insert(v97, v117);
+                                                wait();
+                                                v188 = 1;
+                                            end
+                                            if (v188 == 1) then
+                                                pcall(function()
+                                                    writefile('NotSameServers.json', game:GetService('HttpService'):JSONEncode(v97));
+                                                    wait();
+                                                    game:GetService('TeleportService'):TeleportToPlaceInstance(v96, v117, game.Players.LocalPlayer);
+                                                end);
+                                                wait(4);
+                                                break
+                                            end
+                                        end
+                                    end
+                                    break
+                                end
+                            end
+                        end
+                    end
+                    break
+                end
+            end
+        end
+        function Teleport()
+            while wait() do
+                pcall(function()
+                    local v146 = 0;
+                    while true do
+                        if (v146 == (0)) then
+                            TPReturner();
+                            if (v98 ~= "") then
+                                TPReturner();
+                            end
+                            break
+                        end
+                    end
+                end);
+            end
+        end
+        Teleport();
+    end
+});
+local v35 = v10:section({
+    name = 'UI Settings',
+    side = 'right',
+    size = 50
+});
+v35:keybind({
+    name = 'UI Keybind',
+    def = nil,
+    callback = function(v101)
+        v9.key = v101;
+    end
+});
