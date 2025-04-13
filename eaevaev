@@ -1,0 +1,7 @@
+game.ReplicatedStorage.rEvents.elementMasteryEvent:FireServer("Frost")
+game.ReplicatedStorage.rEvents.elementMasteryEvent:FireServer("Inferno")
+game.ReplicatedStorage.rEvents.elementMasteryEvent:FireServer("Shadow Charge")
+game.ReplicatedStorage.rEvents.elementMasteryEvent:FireServer("Masterful Wrath")
+game.ReplicatedStorage.rEvents.elementMasteryEvent:FireServer("Electral Chaos")
+game.ReplicatedStorage.rEvents.elementMasteryEvent:FireServer("Lightning")
+game.ReplicatedStorage.rEvents.elementMasteryEvent:FireServer("Shadowfire")
