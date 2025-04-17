@@ -1,0 +1,735 @@
+-- discord.gg/25ms
+
+
+local function v8()
+    local function v21(v56)
+        if v56:IsA('ProximityPrompt') then
+            local v78 = 0;
+            local v79;
+            while true do
+                if (v78 == (0)) then
+                    v79 = 0;
+                    while true do
+                        if (v79 == (0)) then
+                            v56.HoldDuration = 0;
+                            v56.MaxActivationDistance = 8;
+                            break
+                        end
+                    end
+                    break
+                end
+            end
+        end
+    end
+    local function v22(v57, v58)
+        local v59 = Instance.new('BillboardGui');
+        v59.Adornee = v57;
+        v59.Size = UDim2.new(1, 0, 1, 0);
+        v59.AlwaysOnTop = true;
+        local v63 = Instance.new('Frame', v59);
+        v63.Size = UDim2.new(1, 0, 1, 0);
+        v63.BackgroundColor3 = v58;
+        v63.BorderSizePixel = 0;
+        v59.Parent = v57;
+        return v59
+    end
+    local function v23(v68)
+        local v69 = 0;
+        local v70;
+        local v71;
+        while true do
+            if (v69 == (0)) then
+                v21(v68);
+                v70 = v68.Parent;
+                v69 = 1;
+            end
+            if (v69 == 1) then
+                v71 = v22(v70, Color3.new(1, 0, 0));
+                v68.Triggered:Connect(function()
+                    v71.Frame.Visible = false;
+                end);
+                break
+            end
+        end
+    end
+    local function v24(v72)
+        for v75, v76 in ipairs(v72:GetChildren()) do
+            local v77 = 0;
+            while true do
+                if (v77 == (0)) then
+                    if (v76:IsA('ProximityPrompt') and (v76.Name == 'ObjectivePrompt')) then
+                        v23(v76);
+                    end
+                    v24(v76);
+                    break
+                end
+            end
+        end
+    end
+    local function v25(v73)
+        local v74 = 0;
+        while true do
+            if (v74 == (0)) then
+                if (v73:IsA('ProximityPrompt') and (v73.Name == 'ObjectivePrompt')) then
+                    v23(v73);
+                end
+                v73.ChildAdded:Connect(v25);
+                v74 = 1;
+            end
+            if ((1) == v74) then
+                v24(v73);
+                break
+            end
+        end
+    end
+    workspace.ChildAdded:Connect(v25);
+    v24(workspace);
+end
+local function v9()
+    local v26 = 0;
+    local v27;
+    local v28;
+    local v29;
+    while true do
+        if (v26 == (2)) then
+            v29 = nil;
+            function v29(v88)
+                local v89 = 0;
+                local v90;
+                while true do
+                    if (v89 == 0) then
+                        v90 = 0;
+                        while true do
+                            if (v90 == 1) then
+                                v28(v88);
+                                break
+                            end
+                            if (v90 == 0) then
+                                if (v88:IsA('ProximityPrompt') and (v88.Name == 'ObjectivePrompt')) then
+                                    v27(v88);
+                                end
+                                v88.ChildAdded:Connect(v29);
+                                v90 = 1;
+                            end
+                        end
+                        break
+                    end
+                end
+            end
+            v26 = 3;
+        end
+        if ((0) == v26) then
+            v27 = nil;
+            function v27(v91)
+                fireproximityprompt(v91, 2322);
+            end
+            v26 = 1;
+        end
+        if (v26 == (1)) then
+            local v80 = 0;
+            while true do
+                if (v80 == 0) then
+                    v28 = nil;
+                    function v28(v138)
+                        for v142, v143 in ipairs(v138:GetChildren()) do
+                            local v144 = 0;
+                            while true do
+                                if (v144 == (0)) then
+                                    if (v143:IsA('ProximityPrompt') and (v143.Name == 'ObjectivePrompt')) then
+                                        v27(v143);
+                                    end
+                                    v28(v143);
+                                    break
+                                end
+                            end
+                        end
+                    end
+                    v80 = 1;
+                end
+                if (v80 == (1)) then
+                    v26 = 2;
+                    break
+                end
+            end
+        end
+        if ((3) == v26) then
+            workspace.ChildAdded:Connect(v29);
+            v28(workspace);
+            break
+        end
+    end
+end
+local function v10()
+    local v30 = 0;
+    local v31;
+    local v32;
+    local v33;
+    local v34;
+    while true do
+        if (v30 == 2) then
+            function v33(v92)
+                local v93 = v92:FindFirstChild('Aspects');
+                if v93 then
+                    v32(v93);
+                else
+                    v92.ChildAdded:Connect(function(v139)
+                        if (v139.Name == 'Aspects') then
+                            v32(v139);
+                        end
+                    end);
+                end
+            end
+            v34 = nil;
+            v30 = 3;
+        end
+        if ((4) == v30) then
+            for v94, v95 in ipairs(v31:GetPlayers()) do
+                v34(v95);
+            end
+            break
+        end
+        if (v30 == (1)) then
+            function v32(v96)
+                local v97 = 0;
+                local v98;
+                while true do
+                    if (v97 == (0)) then
+                        v98 = v96:FindFirstChild('Stamina');
+                        if v98 then
+                            local v151 = 0;
+                            while true do
+                                if (v151 == (0)) then
+                                    v98.Max.Value = 1E7;
+                                    v98.RegenAmount.Value = 1E7;
+                                    v151 = 1;
+                                end
+                                if (v151 == 1) then
+                                    v98.RegenSpeed.Value = 0;
+                                    break
+                                end
+                            end
+                        end
+                        break
+                    end
+                end
+            end
+            v33 = nil;
+            v30 = 2;
+        end
+        if (v30 == (3)) then
+            function v34(v99)
+                local v100 = 0;
+                local v101;
+                while true do
+                    if (v100 == 1) then
+                        if v101 then
+                            v33(v101);
+                        else
+                            v99.CharacterAdded:Wait():Connect(v33);
+                        end
+                        break
+                    end
+                    if (v100 == (0)) then
+                        v99.CharacterAdded:Connect(v33);
+                        v101 = v99.Character;
+                        v100 = 1;
+                    end
+                end
+            end
+            v31.PlayerAdded:Connect(v34);
+            v30 = 4;
+        end
+        if ((0) == v30) then
+            local v81 = 0;
+            while true do
+                if (v81 == (0)) then
+                    v31 = game:GetService('Players');
+                    v32 = nil;
+                    v81 = 1;
+                end
+                if (v81 == (1)) then
+                    v30 = 1;
+                    break
+                end
+            end
+        end
+    end
+end
+local function v11()
+    local v35 = 0;
+    local v36;
+    local v37;
+    local v38;
+    local v39;
+    local v40;
+    local v41;
+    local v42;
+    local v43;
+    local v44;
+    local v45;
+    while true do
+        if ((2) == v35) then
+            local v82 = 0;
+            while true do
+                if (v82 == (1)) then
+                    v44 = nil;
+                    v35 = 3;
+                    break
+                end
+                if (v82 == (0)) then
+                    v42 = Color3.fromRGB(255, 255, 255);
+                    v43 = Color3.fromRGB(255, 255, 255);
+                    v82 = 1;
+                end
+            end
+        end
+        if (v35 == (3)) then
+            local v83 = 0;
+            local v84;
+            while true do
+                if (v83 == (0)) then
+                    v84 = 0;
+                    while true do
+                        if (v84 == (0)) then
+                            function v44()
+                                local v169 = 0;
+                                while true do
+                                    if (v169 == 0) then
+                                        v36.Ambient = v37;
+                                        v36.Atmosphere.Density = v38;
+                                        v169 = 1;
+                                    end
+                                    if (v169 == (1)) then
+                                        v36.Atmosphere.Offset = v39;
+                                        v36.Atmosphere.Glare = v40;
+                                        v169 = 2;
+                                    end
+                                    if (v169 == 2) then
+                                        v36.Atmosphere.Haze = v41;
+                                        v36.Atmosphere.Color = v42;
+                                        v169 = 3;
+                                    end
+                                    if ((3) == v169) then
+                                        v36.Atmosphere.Decay = v43;
+                                        break
+                                    end
+                                end
+                            end
+                            v45 = nil;
+                            v84 = 1;
+                        end
+                        if (v84 == (1)) then
+                            function v45()
+                                while true do
+                                    local v170 = 0;
+                                    while true do
+                                        if ((0) == v170) then
+                                            if ((v36.Ambient ~= v37) or (v36.Atmosphere.Density ~= v38) or (v36.Atmosphere.Offset ~= v39) or (v36.Atmosphere.Glare ~= v40) or (v36.Atmosphere.Haze ~= v41) or (v36.Atmosphere.Color ~= v42) or (v36.Atmosphere.Decay ~= v43)) then
+                                                v44();
+                                            end
+                                            wait(9.999999999990905E-2);
+                                            break
+                                        end
+                                    end
+                                end
+                            end
+                            v35 = 4;
+                            break
+                        end
+                    end
+                    break
+                end
+            end
+        end
+        if (v35 == 1) then
+            local v85 = 0;
+            while true do
+                if (v85 == (1)) then
+                    v41 = 0;
+                    v35 = 2;
+                    break
+                end
+                if (v85 == 0) then
+                    v39 = 0;
+                    v40 = 0;
+                    v85 = 1;
+                end
+            end
+        end
+        if ((4) == v35) then
+            v45();
+            break
+        end
+        if (v35 == (0)) then
+            v36 = game:GetService('Lighting');
+            v37 = Color3.fromRGB(255, 255, 255);
+            v38 = 0;
+            v35 = 1;
+        end
+    end
+end
+local function v12()
+    local v46 = 0;
+    local v47;
+    local v48;
+    while true do
+        if ((2) == v46) then
+            while true do
+                local v102 = 0;
+                while true do
+                    if (v102 == (0)) then
+                        task.wait();
+                        v48();
+                        break
+                    end
+                end
+            end
+            break
+        end
+        if (v46 == (1)) then
+            function v48()
+                local v103 = 0;
+                local v104;
+                while true do
+                    if (v103 == (0)) then
+                        v104 = game.Players.LocalPlayer;
+                        if v104 then
+                            local v152 = v104:FindFirstChild('CoinsToGive');
+                            if v152 then
+                                if (v152.Value < v47) then
+                                    local v201 = 0;
+                                    while true do
+                                        if (v201 == (0)) then
+                                            v152.Value = v47;
+                                            print("CoinsToGive ajustado automáticamente a 55.");
+                                            break
+                                        end
+                                    end
+                                end
+                            else
+                                local v171 = 0;
+                                while true do
+                                    if (v171 == 0) then
+                                        v152 = Instance.new('IntValue');
+                                        v152.Name = 'CoinsToGive';
+                                        v171 = 1;
+                                    end
+                                    if (v171 == (2)) then
+                                        print("CoinsToGive creado y ajustado automáticamente a 55.");
+                                        break
+                                    end
+                                    if ((1) == v171) then
+                                        v152.Value = v47;
+                                        v152.Parent = v104;
+                                        v171 = 2;
+                                    end
+                                end
+                            end
+                        else
+                            warn("No se encontró LocalPlayer.");
+                        end
+                        break
+                    end
+                end
+            end
+            v48();
+            v46 = 2;
+        end
+        if (v46 == (0)) then
+            v47 = 55;
+            v48 = nil;
+            v46 = 1;
+        end
+    end
+end
+local function v13()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))();
+end
+local v14 = false;
+local function v15(v49)
+    local v50 = 0;
+    local v51;
+    local v52;
+    while true do
+        if (v50 == (1)) then
+            if v49 then
+                local function v106(v113, v114, v115)
+                    local v116 = 0;
+                    local v117;
+                    local v118;
+                    local v119;
+                    while true do
+                        if (v116 == (1)) then
+                            v119 = nil;
+                            while true do
+                                if (v117 == 1) then
+                                    v118.Name = v114 .. 'Billboard' ;
+                                    v119 = Instance.new('TextLabel', v118);
+                                    v119.TextScaled = true;
+                                    v119.TextWrapped = true;
+                                    v117 = 2;
+                                end
+                                if (v117 == (2)) then
+                                    v119.Size = UDim2.new(1, 0, 1, 0);
+                                    v119.Text = v114;
+                                    v119.TextColor3 = v115;
+                                    v119.BackgroundTransparency = 1;
+                                    v117 = 3;
+                                end
+                                if (v117 == (0)) then
+                                    v118 = Instance.new('BillboardGui');
+                                    v118.AlwaysOnTop = true;
+                                    v118.Size = UDim2.new(0, 100, 0, 40);
+                                    v118.StudsOffset = Vector3.new(0, 3, 0);
+                                    v117 = 1;
+                                end
+                                if (v117 == (3)) then
+                                    v118.Parent = v113:FindFirstChild('Head') or v113:FindFirstChildWhichIsA('BasePart') ;
+                                    break
+                                end
+                            end
+                            break
+                        end
+                        if (v116 == (0)) then
+                            v117 = 0;
+                            v118 = nil;
+                            v116 = 1;
+                        end
+                    end
+                end
+                local function v107(v120, v121)
+                    local v122 = 0;
+                    local v123;
+                    while true do
+                        if (v122 == (0)) then
+                            v123 = Instance.new('Highlight');
+                            v123.Adornee = v120;
+                            v122 = 1;
+                        end
+                        if (v122 == (2)) then
+                            v123.OutlineColor = v121;
+                            v123.OutlineTransparency = 0;
+                            v122 = 3;
+                        end
+                        if (v122 == 1) then
+                            v123.FillColor = v121;
+                            v123.FillTransparency = 0.5;
+                            v122 = 2;
+                        end
+                        if (v122 == 3) then
+                            v123.Name = v120.Name .. 'Highlight' ;
+                            v123.Parent = v120;
+                            break
+                        end
+                    end
+                end
+                local function v108(v124)
+                    local v125 = 0;
+                    local v126;
+                    local v127;
+                    while true do
+                        if ((1) == v125) then
+                            if v127 then
+                                local v172 = 0;
+                                local v173;
+                                while true do
+                                    if (v172 == (0)) then
+                                        wait(0.5);
+                                        v173 = v126:FindFirstChild('MonsterNameValue');
+                                        v172 = 1;
+                                    end
+                                    if (v172 == (1)) then
+                                        if v173 then
+                                            local v209 = 0;
+                                            while true do
+                                                if (0 == v209) then
+                                                    v106(v126, v124.Name, Color3.new(1, 1, 1));
+                                                    v107(v126, Color3.new(1, 1, 1));
+                                                    break
+                                                end
+                                            end
+                                        else
+                                            local v210 = 0;
+                                            while true do
+                                                if (v210 == 0) then
+                                                    v106(v126, v124.Name, Color3.new(0, 1, 0));
+                                                    v107(v126, Color3.new(0, 1, 0));
+                                                    break
+                                                end
+                                            end
+                                        end
+                                        break
+                                    end
+                                end
+                            end
+                            break
+                        end
+                        if (v125 == 0) then
+                            v126 = v124.Character or v124.CharacterAdded:Wait() ;
+                            v127 = v126:FindFirstChildOfClass('Humanoid');
+                            v125 = 1;
+                        end
+                    end
+                end
+                local function v109(v128)
+                    local v129 = v128:FindFirstChildOfClass('Humanoid');
+                    if v129 then
+                        local v145 = 0;
+                        local v146;
+                        while true do
+                            if ((0) == v145) then
+                                v146 = v128:FindFirstChild('MonsterNameValue');
+                                if v146 then
+                                    local v202 = 0;
+                                    while true do
+                                        if (v202 == 0) then
+                                            v106(v128, v128.Name, Color3.new(1, 1, 1));
+                                            v107(v128, Color3.new(1, 1, 1));
+                                            break
+                                        end
+                                    end
+                                else
+                                    v106(v128, v128.Name, Color3.new(0, 1, 0));
+                                    v107(v128, Color3.new(0, 1, 0));
+                                end
+                                break
+                            end
+                        end
+                    end
+                end
+                local function v110(v130)
+                    if v130:IsA('Model') then
+                        v109(v130);
+                    end
+                end
+                local function v111(v131)
+                    if v131:IsA('Model') then
+                        for v160, v161 in ipairs(v131:GetDescendants()) do
+                            if (v161:IsA('BillboardGui') or v161:IsA('Highlight')) then
+                                v161:Destroy();
+                            end
+                        end
+                    end
+                end
+                v51.PlayerAdded:Connect(v108);
+                v51.PlayerRemoving:Connect(function(v132)
+                    local v133 = 0;
+                    local v134;
+                    while true do
+                        if (v133 == (0)) then
+                            v134 = v132.Character;
+                            if v134 then
+                                for v189, v190 in ipairs(v134:GetDescendants()) do
+                                    if (v190:IsA('BillboardGui') or v190:IsA('Highlight')) then
+                                        v190:Destroy();
+                                    end
+                                end
+                            end
+                            break
+                        end
+                    end
+                end);
+                v52.ChildAdded:Connect(v110);
+                v52.ChildRemoved:Connect(v111);
+                for v135, v136 in ipairs(v52:GetChildren()) do
+                    if v136:IsA('Model') then
+                        v109(v136);
+                    end
+                end
+                v52.DescendantAdded:Connect(function(v137)
+                    if (v137:IsA('ObjectValue') and (v137.Name == 'MonsterNameValue')) then
+                        local v147 = 0;
+                        local v148;
+                        while true do
+                            if (v147 == 0) then
+                                v148 = v137.Parent;
+                                if (v148 and v148:IsA('Model')) then
+                                    v109(v148);
+                                end
+                                break
+                            end
+                        end
+                    end
+                end);
+            else
+                local v112 = 0;
+                while true do
+                    if (v112 == (0)) then
+                        for v163, v164 in ipairs(v51:GetPlayers()) do
+                            local v165 = 0;
+                            local v166;
+                            while true do
+                                if (v165 == (0)) then
+                                    v166 = v164.Character;
+                                    if v166 then
+                                        for v206, v207 in ipairs(v166:GetDescendants()) do
+                                            if (v207:IsA('BillboardGui') or v207:IsA('Highlight')) then
+                                                v207:Destroy();
+                                            end
+                                        end
+                                    end
+                                    break
+                                end
+                            end
+                        end
+                        for v167, v168 in ipairs(v52:GetChildren()) do
+                            if v168:IsA('Model') then
+                                for v192, v193 in ipairs(v168:GetDescendants()) do
+                                    if (v193:IsA('BillboardGui') or v193:IsA('Highlight')) then
+                                        v193:Destroy();
+                                    end
+                                end
+                            end
+                        end
+                        break
+                    end
+                end
+            end
+            break
+        end
+        if (v50 == 0) then
+            local v86 = 0;
+            while true do
+                if (v86 == 1) then
+                    v50 = 1;
+                    break
+                end
+                if (v86 == (0)) then
+                    v51 = game:GetService('Players');
+                    v52 = game:GetService('Workspace');
+                    v86 = 1;
+                end
+            end
+        end
+    end
+end
+local v16 = loadstring(game:HttpGet('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/polar'))();
+local v17 = v16:CreateWindow('SkibidiHub (made by highaup) lol');
+v17:Toggle('Toggle ESP', function(v53)
+    local v54 = 0;
+    while true do
+        if (v54 == 0) then
+            v14 = v53;
+            v15(v14);
+            break
+        end
+    end
+end);
+v17:Button('ESP Objectives', function()
+    v8();
+end);
+v17:Button('Instant Complete', function()
+    v9();
+end);
+v17:Button('Infinite Stamina', function()
+    v10();
+end);
+v17:Button('Fullbright', function()
+    v11();
+end);
+v17:Button('InstaCoinLimit', function()
+    v12();
+end);
+v17:Button('Infinite Yield', function()
+    v13();
+end);
