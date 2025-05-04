@@ -2043,7 +2043,7 @@ function Tab:CreateButton(ButtonSettings)
         UICorner = Instance.new("UICorner")
         UICorner.Parent = Button
     end
-    UICorner.CornerRadius = UDim.new(0, 4) -- Decrease corner radius (e.g., 4 pixels)
+    UICorner.CornerRadius = UDim.new(0, 3) -- Decrease corner radius (e.g., 4 pixels)
 
     Button.BackgroundTransparency = 1
     Button.UIStroke.Transparency = 1
