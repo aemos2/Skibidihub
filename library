@@ -1547,6 +1547,13 @@ function RayfieldLibrary:CreateWindow(Settings)
 	local Passthrough = false
 	Topbar.Title.Text = Settings.Name
 
+    local UICorner = Button:FindFirstChild("UICorner")
+    if not UICorner then
+        UICorner = Instance.new("UICorner")
+        UICorner.Parent = Button
+    end
+    UICorner.CornerRadius = UDim.new(0, 3) -- Decrease corner radius (e.g., 4 pixels)
+
 	Main.Size = UDim2.new(0, 420, 0, 100)
 	Main.Visible = true
 	Main.BackgroundTransparency = 1
