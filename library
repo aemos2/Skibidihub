@@ -271,6 +271,174 @@ local RayfieldLibrary = {
 			InputStroke = Color3.fromRGB(65, 65, 65),
 			PlaceholderColor = Color3.fromRGB(178, 178, 178)
 		},
+		Enhanced = {
+    TextColor = Color3.fromRGB(255, 255, 255),  -- Lighter text for better contrast
+
+    Background = Color3.fromRGB(28, 28, 28),  -- Slightly darker background for a more refined look
+    Topbar = Color3.fromRGB(38, 38, 38),  -- Darker topbar to make it feel more professional
+    Shadow = Color3.fromRGB(15, 15, 15),  -- Lighter shadow to add depth without overwhelming
+
+    NotificationBackground = Color3.fromRGB(22, 22, 22),  -- Darker notification background for subtlety
+    NotificationActionsBackground = Color3.fromRGB(245, 245, 245),  -- Softer notification action background for contrast
+
+    TabBackground = Color3.fromRGB(64, 64, 64),  -- Slightly lighter tab background
+    TabStroke = Color3.fromRGB(75, 75, 75),  -- Slightly lighter stroke to make the tab stand out more
+    TabBackgroundSelected = Color3.fromRGB(220, 220, 220),  -- Softer selection highlight
+    TabTextColor = Color3.fromRGB(255, 255, 255),  -- White text for clarity
+    SelectedTabTextColor = Color3.fromRGB(60, 60, 60),  -- Slightly darker text color for selected tab
+
+    ElementBackground = Color3.fromRGB(45, 45, 45),  -- Darker element background for a sleeker look
+    ElementBackgroundHover = Color3.fromRGB(50, 50, 50),  -- A bit more noticeable on hover
+    SecondaryElementBackground = Color3.fromRGB(30, 30, 30),  -- Soft, dark secondary elements
+    ElementStroke = Color3.fromRGB(60, 60, 60),  -- Lighter stroke for elements to make them look cleaner
+    SecondaryElementStroke = Color3.fromRGB(45, 45, 45),  -- Less aggressive secondary strokes
+
+    SliderBackground = Color3.fromRGB(45, 122, 201),  -- Brighter slider background for focus
+    SliderProgress = Color3.fromRGB(45, 122, 201),  -- Same as background for seamless look
+    SliderStroke = Color3.fromRGB(70, 180, 255),  -- Brighter stroke to emphasize the slider
+
+    ToggleBackground = Color3.fromRGB(32, 32, 32),  -- Slightly lighter toggle background
+    ToggleEnabled = Color3.fromRGB(0, 153, 255),  -- Slightly brighter blue for enabled state
+    ToggleDisabled = Color3.fromRGB(85, 85, 85),  -- Softer disabled color
+    ToggleEnabledStroke = Color3.fromRGB(0, 180, 255),  -- More noticeable enabled stroke
+    ToggleDisabledStroke = Color3.fromRGB(150, 150, 150),  -- Softer disabled stroke
+    ToggleEnabledOuterStroke = Color3.fromRGB(110, 110, 110),  -- A bit lighter outer stroke for enabled toggle
+    ToggleDisabledOuterStroke = Color3.fromRGB(75, 75, 75),  -- Darker disabled outer stroke
+
+    DropdownSelected = Color3.fromRGB(50, 50, 50),  -- Slightly lighter selected dropdown background
+    DropdownUnselected = Color3.fromRGB(35, 35, 35),  -- Darker unselected dropdown background
+
+    InputBackground = Color3.fromRGB(35, 35, 35),  -- A little lighter input background for better contrast
+    InputStroke = Color3.fromRGB(80, 80, 80),  -- Softer input stroke for cleaner look
+    PlaceholderColor = Color3.fromRGB(200, 200, 200)  -- Lighter placeholder text for better readability
+},
+
+UserCreatedStyle = {
+    TextColor = Color3.fromRGB(235, 235, 235),  -- Near-white for clean readability
+
+    Background = Color3.fromRGB(15, 15, 20),  -- Deep, rich dark background
+    Topbar = Color3.fromRGB(20, 20, 25),  -- Slightly raised topbar color
+    Shadow = Color3.fromRGB(0, 0, 0),  -- Hard shadow for depth
+
+    NotificationBackground = Color3.fromRGB(20, 20, 25),
+    NotificationActionsBackground = Color3.fromRGB(50, 50, 60),
+
+    TabBackground = Color3.fromRGB(30, 30, 35),  -- Dark tab background
+    TabStroke = Color3.fromRGB(40, 40, 50),  -- Soft border for tabs
+    TabBackgroundSelected = Color3.fromRGB(70, 60, 90),  -- Muted purple tone for selected tab
+    TabTextColor = Color3.fromRGB(200, 200, 200),
+    SelectedTabTextColor = Color3.fromRGB(180, 140, 255),  -- Pastel purple highlight
+
+    ElementBackground = Color3.fromRGB(25, 25, 30),
+    ElementBackgroundHover = Color3.fromRGB(35, 35, 45),
+    SecondaryElementBackground = Color3.fromRGB(20, 20, 25),
+    ElementStroke = Color3.fromRGB(45, 45, 55),
+    SecondaryElementStroke = Color3.fromRGB(35, 35, 45),
+
+    SliderBackground = Color3.fromRGB(80, 60, 140),  -- Subtle purple base
+    SliderProgress = Color3.fromRGB(160, 130, 255),  -- Vibrant lavender progress fill
+    SliderStroke = Color3.fromRGB(180, 150, 255),  -- Clean purple stroke
+
+    ToggleBackground = Color3.fromRGB(30, 30, 35),
+    ToggleEnabled = Color3.fromRGB(180, 140, 255),  -- Lavender toggle color
+    ToggleDisabled = Color3.fromRGB(70, 70, 80),
+    ToggleEnabledStroke = Color3.fromRGB(200, 160, 255),
+    ToggleDisabledStroke = Color3.fromRGB(90, 90, 100),
+    ToggleEnabledOuterStroke = Color3.fromRGB(60, 60, 70),
+    ToggleDisabledOuterStroke = Color3.fromRGB(45, 45, 55),
+
+    DropdownSelected = Color3.fromRGB(40, 40, 50),
+    DropdownUnselected = Color3.fromRGB(30, 30, 40),
+
+    InputBackground = Color3.fromRGB(25, 25, 30),
+    InputStroke = Color3.fromRGB(60, 60, 70),
+    PlaceholderColor = Color3.fromRGB(150, 150, 160)
+},
+
+ha = {
+        TextColor = Color3.fromRGB(215, 215, 215),  -- Soft white text, not too harsh
+
+    Background = Color3.fromRGB(10, 10, 10),  -- Deep black background
+    Topbar = Color3.fromRGB(12, 12, 12),  -- Slightly lighter than background
+    Shadow = Color3.fromRGB(0, 0, 0),  -- Pure black shadow
+
+    NotificationBackground = Color3.fromRGB(15, 15, 15),  -- Soft black notification box
+    NotificationActionsBackground = Color3.fromRGB(30, 30, 30),  -- Barely lifted action box
+
+    TabBackground = Color3.fromRGB(18, 18, 18),  -- Almost-black for tabs
+    TabStroke = Color3.fromRGB(25, 25, 25),  -- Minimal stroke
+    TabBackgroundSelected = Color3.fromRGB(35, 30, 45),  -- Dark purple tint for selected tab
+    TabTextColor = Color3.fromRGB(180, 180, 185),  -- Light grey text for tabs
+    SelectedTabTextColor = Color3.fromRGB(170, 110, 255),  -- Pastel purple active tab
+
+    ElementBackground = Color3.fromRGB(15, 15, 15),  -- Elements blend with main UI
+    ElementBackgroundHover = Color3.fromRGB(22, 22, 22),  -- Slight hover change
+    SecondaryElementBackground = Color3.fromRGB(12, 12, 12),  -- Deeper base elements
+    ElementStroke = Color3.fromRGB(30, 30, 30),
+    SecondaryElementStroke = Color3.fromRGB(20, 20, 20),
+
+    SliderBackground = Color3.fromRGB(70, 50, 100),  -- Muted dark purple
+    SliderProgress = Color3.fromRGB(120, 90, 170),  -- Subtle pastel purple
+    SliderStroke = Color3.fromRGB(160, 120, 220),  -- Softer purple outline
+
+    ToggleBackground = Color3.fromRGB(18, 18, 18),  -- Matte toggle base
+    ToggleEnabled = Color3.fromRGB(150, 100, 255),  -- Purple accent
+    ToggleDisabled = Color3.fromRGB(60, 60, 60),
+    ToggleEnabledStroke = Color3.fromRGB(170, 120, 255),
+    ToggleDisabledStroke = Color3.fromRGB(90, 90, 90),
+    ToggleEnabledOuterStroke = Color3.fromRGB(50, 50, 50),
+    ToggleDisabledOuterStroke = Color3.fromRGB(30, 30, 30),
+
+    DropdownSelected = Color3.fromRGB(22, 22, 22),
+    DropdownUnselected = Color3.fromRGB(15, 15, 15),
+
+    InputBackground = Color3.fromRGB(18, 18, 18),
+    InputStroke = Color3.fromRGB(35, 35, 35),
+    PlaceholderColor = Color3.fromRGB(130, 130, 130)
+},
+
+CSGOCheatStyle = {
+    TextColor = Color3.fromRGB(240, 240, 240),  -- Lighter text for high contrast and readability
+
+    Background = Color3.fromRGB(15, 15, 15),  -- Dark matte background for a CS:GO-like feel
+    Topbar = Color3.fromRGB(25, 25, 25),  -- Slightly lighter top bar for a subtle effect
+    Shadow = Color3.fromRGB(0, 0, 0),  -- Full black shadow for depth and separation
+
+    NotificationBackground = Color3.fromRGB(22, 22, 22),  -- Semi-transparent black for notifications
+    NotificationActionsBackground = Color3.fromRGB(60, 60, 60),  -- Slightly lighter action background
+
+    TabBackground = Color3.fromRGB(30, 30, 30),  -- Dark grey for tabs, staying within the CS:GO style
+    TabStroke = Color3.fromRGB(50, 50, 50),  -- Light stroke to define tab edges
+    TabBackgroundSelected = Color3.fromRGB(60, 60, 60),  -- Light grey for the selected tab highlight
+    TabTextColor = Color3.fromRGB(255, 255, 255),  -- White text for tab readability
+    SelectedTabTextColor = Color3.fromRGB(0, 255, 0),  -- Bright green for active tab (CS:GO highlight style)
+
+    ElementBackground = Color3.fromRGB(20, 20, 20),  -- Dark background for elements
+    ElementBackgroundHover = Color3.fromRGB(40, 40, 40),  -- Subtle hover effect
+    SecondaryElementBackground = Color3.fromRGB(28, 28, 28),  -- Lighter secondary element background
+    ElementStroke = Color3.fromRGB(80, 80, 80),  -- Light grey strokes for definition
+    SecondaryElementStroke = Color3.fromRGB(60, 60, 60),  -- Lighter secondary strokes
+
+    SliderBackground = Color3.fromRGB(0, 255, 0),  -- Neon green slider background for emphasis
+    SliderProgress = Color3.fromRGB(0, 255, 0),  -- Same color as the background for consistency
+    SliderStroke = Color3.fromRGB(100, 255, 100),  -- Light neon green stroke for slider progress
+
+    ToggleBackground = Color3.fromRGB(20, 20, 20),  -- Dark background for toggle switches
+    ToggleEnabled = Color3.fromRGB(0, 255, 0),  -- Neon green for toggle "enabled" state
+    ToggleDisabled = Color3.fromRGB(100, 100, 100),  -- Grey for disabled toggle state
+    ToggleEnabledStroke = Color3.fromRGB(0, 180, 0),  -- Brighter green stroke for enabled toggle
+    ToggleDisabledStroke = Color3.fromRGB(120, 120, 120),  -- Darker grey stroke for disabled toggle
+    ToggleEnabledOuterStroke = Color3.fromRGB(50, 50, 50),  -- Subtle outer stroke for enabled toggle
+    ToggleDisabledOuterStroke = Color3.fromRGB(30, 30, 30),  -- Dark outer stroke for disabled toggle
+
+    DropdownSelected = Color3.fromRGB(40, 40, 40),  -- Dark, matte selection background
+    DropdownUnselected = Color3.fromRGB(30, 30, 30),  -- Lighter unselected dropdown background
+
+    InputBackground = Color3.fromRGB(18, 18, 18),  -- Dark input field background
+    InputStroke = Color3.fromRGB(60, 60, 60),  -- Subtle stroke around input fields
+    PlaceholderColor = Color3.fromRGB(150, 150, 150),  -- Lighter placeholder text for better contrast
+},
+
 
 		Ocean = {
 			TextColor = Color3.fromRGB(230, 240, 240),
@@ -1547,13 +1715,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 	local Passthrough = false
 	Topbar.Title.Text = Settings.Name
 
-    local UICorner = Button:FindFirstChild("UICorner")
-    if not UICorner then
-        UICorner = Instance.new("UICorner")
-        UICorner.Parent = Button
-    end
-    UICorner.CornerRadius = UDim.new(0, 3) -- Decrease corner radius (e.g., 4 pixels)
-
 	Main.Size = UDim2.new(0, 420, 0, 100)
 	Main.Visible = true
 	Main.BackgroundTransparency = 1
@@ -2035,76 +2196,100 @@ function RayfieldLibrary:CreateWindow(Settings)
 		local Tab = {}
 
 		-- Button
-function Tab:CreateButton(ButtonSettings)
-    local ButtonValue = {}
+		function Tab:CreateButton(ButtonSettings)
+			local ButtonValue = {}
 
-    local Button = Elements.Template.Button:Clone()
-    Button.Name = ButtonSettings.Name
-    Button.Title.Text = ButtonSettings.Name
-    Button.Visible = true
-    Button.Parent = TabPage
+			local Button = Elements.Template.Button:Clone()
+			Button.Name = ButtonSettings.Name
+			Button.Title.Text = ButtonSettings.Name
+			Button.Visible = true
+			Button.Parent = TabPage
 
-    -- Ensure UICorner exists
-    local UICorner = Button:FindFirstChild("UICorner")
-    if not UICorner then
-        UICorner = Instance.new("UICorner")
-        UICorner.Parent = Button
-    end
-    UICorner.CornerRadius = UDim.new(0, 3) -- Decrease corner radius (e.g., 4 pixels)
+			if Button:FindFirstChild("UICorner") then
+				Button.UICorner.CornerRadius = UDim.new(0, 4)
+			end
 
-    Button.BackgroundTransparency = 1
-    Button.UIStroke.Transparency = 1
-    Button.Title.TextTransparency = 1
+			Button.BackgroundTransparency = 1
+			Button.UIStroke.Transparency = 1
+			Button.Title.TextTransparency = 1
 
-    TweenService:Create(Button, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
-    TweenService:Create(Button.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
-    TweenService:Create(Button.Title, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()
+			-- Ensure ElementIndicator is an ImageLabel with no transparency
+			local ElementIndicator
+			if Button:FindFirstChild("ElementIndicator") then
+				ElementIndicator = Button.ElementIndicator
+				if ElementIndicator:IsA("TextLabel") then
+					ElementIndicator:Destroy() -- Remove the old TextLabel
+					ElementIndicator = Instance.new("ImageLabel")
+					ElementIndicator.Name = "ElementIndicator"
+					ElementIndicator.Parent = Button
+				end
+			else
+				ElementIndicator = Instance.new("ImageLabel")
+				ElementIndicator.Name = "ElementIndicator"
+				ElementIndicator.Parent = Button
+			end
 
-    Button.Interact.MouseButton1Click:Connect(function()
-        local Success, Response = pcall(ButtonSettings.Callback)
-        if not Success then
-            TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
-            TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 1}):Play()
-            TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
-            Button.Title.Text = "Callback Error"
-            print("Rayfield | "..ButtonSettings.Name.." Callback Error " ..tostring(Response))
-            warn('Check docs.sirius.menu for help with Rayfield specific development.')
-            task.wait(0.5)
-            Button.Title.Text = ButtonSettings.Name
-            TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
-            TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 0.9}):Play()
-            TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
-        else
-            if not ButtonSettings.Ext then
-                SaveConfiguration(ButtonSettings.Name..'\n')
-            end
-            TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
-            TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 1}):Play()
-            TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
-            task.wait(0.2)
-            TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
-            TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 0.9}):Play()
-            TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
-        end
-    end)
+			-- Configure ElementIndicator (gear icon) with improved appearance
+			ElementIndicator.Size = UDim2.new(0, 20, 0, 20) -- Smaller size for better proportion
+			ElementIndicator.Position = UDim2.new(1, -10, 0.5, 0) -- Slightly further from the right edge
+			ElementIndicator.AnchorPoint = Vector2.new(1, 0.5) -- Right-aligned
+			ElementIndicator.BackgroundTransparency = 1
+			ElementIndicator.Image = "rbxassetid://10723375250" -- Your gear icon asset ID
+			ElementIndicator.ImageTransparency = 0 -- Always fully visible
+			ElementIndicator.ZIndex = 3 -- Ensure it’s on top
+			ElementIndicator.ImageColor3 = Color3.fromRGB(200, 200, 200) -- Light gray tint to match UI theme
 
-    Button.MouseEnter:Connect(function()
-        TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
-        TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 0.7}):Play()
-    end)
+			-- Hide any conflicting icons (like the fingerprint)
+			for _, child in pairs(Button:GetChildren()) do
+				if child:IsA("ImageLabel") and child.Name ~= "ElementIndicator" then
+					child.Visible = false
+				end
+			end
 
-    Button.MouseLeave:Connect(function()
-        TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
-        TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 0.9}):Play()
-    end)
+			-- Debug print to confirm setup
+			TweenService:Create(Button, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
+			TweenService:Create(Button.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
+			TweenService:Create(Button.Title, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()
 
-    function ButtonValue:Set(NewButton)
-        Button.Title.Text = NewButton
-        Button.Name = NewButton
-    end
+			Button.Interact.MouseButton1Click:Connect(function()
+				local Success, Response = pcall(ButtonSettings.Callback)
+				if not Success then
+					TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
+					TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
+					Button.Title.Text = "Callback Error"
+					print("Rayfield | "..ButtonSettings.Name.." Callback Error " ..tostring(Response))
+					warn('Check docs.sirius.menu for help with Rayfield specific development.')
+					task.wait(0.5)
+					Button.Title.Text = ButtonSettings.Name
+					TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
+					TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
+				else
+					if not ButtonSettings.Ext then
+						SaveConfiguration(ButtonSettings.Name..'\n')
+					end
+					TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
+					TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
+					task.wait(0.2)
+					TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
+					TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
+				end
+			end)
 
-    return ButtonValue
-end
+			Button.MouseEnter:Connect(function()
+				TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
+			end)
+
+			Button.MouseLeave:Connect(function()
+				TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
+			end)
+
+			function ButtonValue:Set(NewButton)
+				Button.Title.Text = NewButton
+				Button.Name = NewButton
+			end
+
+			return ButtonValue
+		end
 
 		-- ColorPicker
 		function Tab:CreateColorPicker(ColorPickerSettings) -- by Throit
@@ -2129,6 +2314,15 @@ end
 			ColorPicker.HexInput.Position = UDim2.new(0, 17, 0, 90)
 			Main.ImageTransparency = 1
 			Background.BackgroundTransparency = 1
+
+			-- Adjust the UICorner of the ColorPicker itself
+			if ColorPicker:FindFirstChild("UICorner") then
+				ColorPicker.UICorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+			else
+				local UICorner = Instance.new("UICorner")
+				UICorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+				UICorner.Parent = ColorPicker
+			end
 
 			for _, rgbinput in ipairs(ColorPicker.RGB:GetChildren()) do
 				if rgbinput:IsA("Frame") then
@@ -2181,13 +2375,15 @@ end
 					TweenService:Create(Main, TweenInfo.new(0.2, Enum.EasingStyle.Exponential), {ImageTransparency = 1}):Play()
 					TweenService:Create(Background, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundTransparency = 1}):Play()
 				end
-
 			end)
 
-			UserInputService.InputEnded:Connect(function(input, gameProcessed) if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then 
+			-- The rest of the function remains unchanged
+			UserInputService.InputEnded:Connect(function(input, gameProcessed) 
+				if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then 
 					mainDragging = false
 					sliderDragging = false
-				end end)
+				end 
+			end)
 			Main.MouseButton1Down:Connect(function()
 				if opened then
 					mainDragging = true 
@@ -2209,14 +2405,11 @@ end
 			local hex = string.format("#%02X%02X%02X",color.R*0xFF,color.G*0xFF,color.B*0xFF)
 			ColorPicker.HexInput.InputBox.Text = hex
 			local function setDisplay()
-				--Main
 				Main.MainPoint.Position = UDim2.new(s,-Main.MainPoint.AbsoluteSize.X/2,1-v,-Main.MainPoint.AbsoluteSize.Y/2)
 				Main.MainPoint.ImageColor3 = Color3.fromHSV(h,s,v)
 				Background.BackgroundColor3 = Color3.fromHSV(h,1,1)
 				Display.BackgroundColor3 = Color3.fromHSV(h,s,v)
-				--Slider 
-				local x = h * Slider.AbsoluteSize.X
-				Slider.SliderPoint.Position = UDim2.new(0,x-Slider.SliderPoint.AbsoluteSize.X/2,0.5,0)
+				Slider.SliderPoint.Position = UDim2.new(0, h * Slider.AbsoluteSize.X - Slider.SliderPoint.AbsoluteSize.X/2, 0.5, 0)
 				Slider.SliderPoint.ImageColor3 = Color3.fromHSV(h,1,1)
 				local color = Color3.fromHSV(h,s,v) 
 				local r,g,b = math.floor((color.R*255)+0.5),math.floor((color.G*255)+0.5),math.floor((color.B*255)+0.5)
@@ -2229,14 +2422,13 @@ end
 			setDisplay()
 			ColorPicker.HexInput.InputBox.FocusLost:Connect(function()
 				if not pcall(function()
-						local r, g, b = string.match(ColorPicker.HexInput.InputBox.Text, "^#?(%w%w)(%w%w)(%w%w)$")
-						local rgbColor = Color3.fromRGB(tonumber(r, 16),tonumber(g, 16), tonumber(b, 16))
-						h,s,v = rgbColor:ToHSV()
-						hex = ColorPicker.HexInput.InputBox.Text
-						setDisplay()
-						ColorPickerSettings.Color = rgbColor
-					end) 
-				then 
+					local r, g, b = string.match(ColorPicker.HexInput.InputBox.Text, "^#?(%w%w)(%w%w)(%w%w)$")
+					local rgbColor = Color3.fromRGB(tonumber(r, 16),tonumber(g, 16), tonumber(b, 16))
+					h,s,v = rgbColor:ToHSV()
+					hex = ColorPicker.HexInput.InputBox.Text
+					setDisplay()
+					ColorPickerSettings.Color = rgbColor
+				end) then 
 					ColorPicker.HexInput.InputBox.Text = hex 
 				end
 				pcall(function()ColorPickerSettings.Callback(Color3.fromHSV(h,s,v))end)
@@ -2246,105 +2438,97 @@ end
 					SaveConfiguration(ColorPickerSettings.Flag..'\n'..tostring(ColorPickerSettings.Color))
 				end
 			end)
-			--RGB
-			local function rgbBoxes(box,toChange)
+			local function rgbBoxes(box, toChange)
 				local value = tonumber(box.Text) 
 				local color = Color3.fromHSV(h,s,v) 
-				local oldR,oldG,oldB = math.floor((color.R*255)+0.5),math.floor((color.G*255)+0.5),math.floor((color.B*255)+0.5)
+				local oldR, oldG, oldB = math.floor((color.R*255)+0.5),math.floor((color.G*255)+0.5),math.floor((color.B*255)+0.5)
 				local save 
-				if toChange == "R" then save = oldR;oldR = value elseif toChange == "G" then save = oldG;oldG = value else save = oldB;oldB = value end
+				if toChange == "R" then save = oldR; oldR = value elseif toChange == "G" then save = oldG; oldG = value else save = oldB; oldB = value end
 				if value then 
-					value = math.clamp(value,0,255)
-					h,s,v = Color3.fromRGB(oldR,oldG,oldB):ToHSV()
-
+					value = math.clamp(value, 0, 255)
+					h, s, v = Color3.fromRGB(oldR, oldG, oldB):ToHSV()
 					setDisplay()
 				else 
 					box.Text = tostring(save)
 				end
-				local r,g,b = math.floor((h*255)+0.5),math.floor((s*255)+0.5),math.floor((v*255)+0.5)
-				ColorPickerSettings.Color = Color3.fromRGB(r,g,b)
+				local r, g, b = math.floor((h*255)+0.5), math.floor((s*255)+0.5), math.floor((v*255)+0.5)
+				ColorPickerSettings.Color = Color3.fromRGB(r, g, b)
 				if not ColorPickerSettings.Ext then
 					SaveConfiguration()
 				end
 			end
-			ColorPicker.RGB.RInput.InputBox.FocusLost:connect(function()
-				rgbBoxes(ColorPicker.RGB.RInput.InputBox,"R")
-				pcall(function()ColorPickerSettings.Callback(Color3.fromHSV(h,s,v))end)
+			ColorPicker.RGB.RInput.InputBox.FocusLost:Connect(function()
+				rgbBoxes(ColorPicker.RGB.RInput.InputBox, "R")
+				pcall(function()ColorPickerSettings.Callback(Color3.fromHSV(h, s, v))end)
 			end)
-			ColorPicker.RGB.GInput.InputBox.FocusLost:connect(function()
-				rgbBoxes(ColorPicker.RGB.GInput.InputBox,"G")
-				pcall(function()ColorPickerSettings.Callback(Color3.fromHSV(h,s,v))end)
+			ColorPicker.RGB.GInput.InputBox.FocusLost:Connect(function()
+				rgbBoxes(ColorPicker.RGB.GInput.InputBox, "G")
+				pcall(function()ColorPickerSettings.Callback(Color3.fromHSV(h, s, v))end)
 			end)
-			ColorPicker.RGB.BInput.InputBox.FocusLost:connect(function()
-				rgbBoxes(ColorPicker.RGB.BInput.InputBox,"B")
-				pcall(function()ColorPickerSettings.Callback(Color3.fromHSV(h,s,v))end)
+			ColorPicker.RGB.BInput.InputBox.FocusLost:Connect(function()
+				rgbBoxes(ColorPicker.RGB.BInput.InputBox, "B")
+				pcall(function()ColorPickerSettings.Callback(Color3.fromHSV(h, s, v))end)
 			end)
-
-			RunService.RenderStepped:connect(function()
+			RunService.RenderStepped:Connect(function()
 				if mainDragging then 
-					local localX = math.clamp(mouse.X-Main.AbsolutePosition.X,0,Main.AbsoluteSize.X)
-					local localY = math.clamp(mouse.Y-Main.AbsolutePosition.Y,0,Main.AbsoluteSize.Y)
-					Main.MainPoint.Position = UDim2.new(0,localX-Main.MainPoint.AbsoluteSize.X/2,0,localY-Main.MainPoint.AbsoluteSize.Y/2)
+					local localX = math.clamp(mouse.X - Main.AbsolutePosition.X, 0, Main.AbsoluteSize.X)
+					local localY = math.clamp(mouse.Y - Main.AbsolutePosition.Y, 0, Main.AbsoluteSize.Y)
+					Main.MainPoint.Position = UDim2.new(0, localX - Main.MainPoint.AbsoluteSize.X/2, 0, localY - Main.MainPoint.AbsoluteSize.Y/2)
 					s = localX / Main.AbsoluteSize.X
 					v = 1 - (localY / Main.AbsoluteSize.Y)
-					Display.BackgroundColor3 = Color3.fromHSV(h,s,v)
-					Main.MainPoint.ImageColor3 = Color3.fromHSV(h,s,v)
-					Background.BackgroundColor3 = Color3.fromHSV(h,1,1)
-					local color = Color3.fromHSV(h,s,v) 
-					local r,g,b = math.floor((color.R*255)+0.5),math.floor((color.G*255)+0.5),math.floor((color.B*255)+0.5)
+					Display.BackgroundColor3 = Color3.fromHSV(h, s, v)
+					Main.MainPoint.ImageColor3 = Color3.fromHSV(h, s, v)
+					Background.BackgroundColor3 = Color3.fromHSV(h, 1, 1)
+					local color = Color3.fromHSV(h, s, v) 
+					local r, g, b = math.floor((color.R*255)+0.5), math.floor((color.G*255)+0.5), math.floor((color.B*255)+0.5)
 					ColorPicker.RGB.RInput.InputBox.Text = tostring(r)
 					ColorPicker.RGB.GInput.InputBox.Text = tostring(g)
 					ColorPicker.RGB.BInput.InputBox.Text = tostring(b)
-					ColorPicker.HexInput.InputBox.Text = string.format("#%02X%02X%02X",color.R*0xFF,color.G*0xFF,color.B*0xFF)
-					pcall(function()ColorPickerSettings.Callback(Color3.fromHSV(h,s,v))end)
-					ColorPickerSettings.Color = Color3.fromRGB(r,g,b)
+					ColorPicker.HexInput.InputBox.Text = string.format("#%02X%02X%02X", color.R*0xFF, color.G*0xFF, color.B*0xFF)
+					pcall(function()ColorPickerSettings.Callback(Color3.fromHSV(h, s, v))end)
+					ColorPickerSettings.Color = Color3.fromRGB(r, g, b)
 					if not ColorPickerSettings.Ext then
 						SaveConfiguration()
 					end
 				end
 				if sliderDragging then 
-					local localX = math.clamp(mouse.X-Slider.AbsolutePosition.X,0,Slider.AbsoluteSize.X)
+					local localX = math.clamp(mouse.X - Slider.AbsolutePosition.X, 0, Slider.AbsoluteSize.X)
 					h = localX / Slider.AbsoluteSize.X
-					Display.BackgroundColor3 = Color3.fromHSV(h,s,v)
-					Slider.SliderPoint.Position = UDim2.new(0,localX-Slider.SliderPoint.AbsoluteSize.X/2,0.5,0)
-					Slider.SliderPoint.ImageColor3 = Color3.fromHSV(h,1,1)
-					Background.BackgroundColor3 = Color3.fromHSV(h,1,1)
-					Main.MainPoint.ImageColor3 = Color3.fromHSV(h,s,v)
-					local color = Color3.fromHSV(h,s,v) 
-					local r,g,b = math.floor((color.R*255)+0.5),math.floor((color.G*255)+0.5),math.floor((color.B*255)+0.5)
+					Display.BackgroundColor3 = Color3.fromHSV(h, s, v)
+					Slider.SliderPoint.Position = UDim2.new(0, localX - Slider.SliderPoint.AbsoluteSize.X/2, 0.5, 0)
+					Slider.SliderPoint.ImageColor3 = Color3.fromHSV(h, 1, 1)
+					Background.BackgroundColor3 = Color3.fromHSV(h, 1, 1)
+					Main.MainPoint.ImageColor3 = Color3.fromHSV(h, s, v)
+					local color = Color3.fromHSV(h, s, v) 
+					local r, g, b = math.floor((color.R*255)+0.5), math.floor((color.G*255)+0.5), math.floor((color.B*255)+0.5)
 					ColorPicker.RGB.RInput.InputBox.Text = tostring(r)
 					ColorPicker.RGB.GInput.InputBox.Text = tostring(g)
 					ColorPicker.RGB.BInput.InputBox.Text = tostring(b)
-					ColorPicker.HexInput.InputBox.Text = string.format("#%02X%02X%02X",color.R*0xFF,color.G*0xFF,color.B*0xFF)
-					pcall(function()ColorPickerSettings.Callback(Color3.fromHSV(h,s,v))end)
-					ColorPickerSettings.Color = Color3.fromRGB(r,g,b)
+					ColorPicker.HexInput.InputBox.Text = string.format("#%02X%02X%02X", color.R*0xFF, color.G*0xFF, color.B*0xFF)
+					pcall(function()ColorPickerSettings.Callback(Color3.fromHSV(h, s, v))end)
+					ColorPickerSettings.Color = Color3.fromRGB(r, g, b)
 					if not ColorPickerSettings.Ext then
 						SaveConfiguration()
 					end
 				end
 			end)
-
 			if Settings.ConfigurationSaving then
 				if Settings.ConfigurationSaving.Enabled and ColorPickerSettings.Flag then
 					RayfieldLibrary.Flags[ColorPickerSettings.Flag] = ColorPickerSettings
 				end
 			end
-
 			function ColorPickerSettings:Set(RGBColor)
 				ColorPickerSettings.Color = RGBColor
-				h,s,v = ColorPickerSettings.Color:ToHSV()
-				color = Color3.fromHSV(h,s,v)
+				h, s, v = ColorPickerSettings.Color:ToHSV()
+				color = Color3.fromHSV(h, s, v)
 				setDisplay()
 			end
-
 			ColorPicker.MouseEnter:Connect(function()
 				TweenService:Create(ColorPicker, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
 			end)
-
 			ColorPicker.MouseLeave:Connect(function()
 				TweenService:Create(ColorPicker, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 			end)
-
 			Rayfield.Main:GetPropertyChangedSignal('BackgroundColor3'):Connect(function()
 				for _, rgbinput in ipairs(ColorPicker.RGB:GetChildren()) do
 					if rgbinput:IsA("Frame") then
@@ -2352,11 +2536,9 @@ end
 						rgbinput.UIStroke.Color = SelectedTheme.InputStroke
 					end
 				end
-
 				ColorPicker.HexInput.BackgroundColor3 = SelectedTheme.InputBackground
 				ColorPicker.HexInput.UIStroke.Color = SelectedTheme.InputStroke
 			end)
-
 			return ColorPickerSettings
 		end
 
@@ -2414,6 +2596,15 @@ end
 			Label.Title.Text = LabelText
 			Label.Visible = true
 			Label.Parent = TabPage
+
+			-- Adjust the UICorner of the Label itself
+			if Label:FindFirstChild("UICorner") then
+				Label.UICorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+			else
+				local UICorner = Instance.new("UICorner")
+				UICorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+				UICorner.Parent = Label
+			end
 
 			Label.BackgroundColor3 = Color or SelectedTheme.SecondaryElementBackground
 			Label.UIStroke.Color = Color or SelectedTheme.SecondaryElementStroke
@@ -2511,6 +2702,14 @@ end
 			Paragraph.Visible = true
 			Paragraph.Parent = TabPage
 
+			if Paragraph:FindFirstChild("UICorner") then
+				Paragraph.UICorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+			else
+				local UICorner = Instance.new("UICorner")
+				UICorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+				UICorner.Parent = Paragraph
+			end
+
 			Paragraph.BackgroundTransparency = 1
 			Paragraph.UIStroke.Transparency = 1
 			Paragraph.Title.TextTransparency = 1
@@ -2553,6 +2752,26 @@ end
 
 			Input.InputFrame.BackgroundColor3 = SelectedTheme.InputBackground
 			Input.InputFrame.UIStroke.Color = SelectedTheme.InputStroke
+
+			-- Apply smaller corner radius to the outer Input frame
+			local inputCorner = Input:FindFirstChildOfClass("UICorner")
+			if inputCorner then
+				inputCorner.CornerRadius = UDim.new(0, 4)
+			else
+				local newCorner = Instance.new("UICorner")
+				newCorner.CornerRadius = UDim.new(0, 4)
+				newCorner.Parent = Input
+			end
+
+			-- Apply smaller corner radius to the inner InputFrame (textbox)
+			local frameCorner = Input.InputFrame:FindFirstChildOfClass("UICorner")
+			if frameCorner then
+				frameCorner.CornerRadius = UDim.new(0, 4)
+			else
+				local newFrameCorner = Instance.new("UICorner")
+				newFrameCorner.CornerRadius = UDim.new(0, 4)
+				newFrameCorner.Parent = Input.InputFrame
+			end
 
 			TweenService:Create(Input, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
 			TweenService:Create(Input.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
@@ -2638,6 +2857,11 @@ end
 			Dropdown.Title.Text = DropdownSettings.Name
 			Dropdown.Visible = true
 			Dropdown.Parent = TabPage
+
+			local corner = Dropdown:FindFirstChildOfClass("UICorner")
+			if corner then
+				corner.CornerRadius = UDim.new(0, 4)  -- adjust the value here for sharper corners
+			end
 
 			Dropdown.List.Visible = false
 			if DropdownSettings.CurrentOption then
@@ -2958,6 +3182,11 @@ end
 			Keybind.UIStroke.Transparency = 1
 			Keybind.Title.TextTransparency = 1
 
+			local keybindCorner = Keybind:FindFirstChildOfClass("UICorner")
+			if keybindCorner then
+				keybindCorner.CornerRadius = UDim.new(0, 4)  -- adjust the value here for sharper corners
+			end
+
 			Keybind.KeybindFrame.BackgroundColor3 = SelectedTheme.InputBackground
 			Keybind.KeybindFrame.UIStroke.Color = SelectedTheme.InputStroke
 
@@ -2967,6 +3196,11 @@ end
 
 			Keybind.KeybindFrame.KeybindBox.Text = KeybindSettings.CurrentKeybind
 			Keybind.KeybindFrame.Size = UDim2.new(0, Keybind.KeybindFrame.KeybindBox.TextBounds.X + 24, 0, 30)
+
+			local keybindFrameCorner = Keybind.KeybindFrame:FindFirstChildOfClass("UICorner")
+			if keybindFrameCorner then
+				keybindFrameCorner.CornerRadius = UDim.new(0, 4)  -- adjust the value here for sharper corners
+			end
 
 			Keybind.KeybindFrame.KeybindBox.Focused:Connect(function()
 				CheckingForKey = true
@@ -3086,6 +3320,27 @@ end
 			Toggle.Visible = true
 			Toggle.Parent = TabPage
 
+			local ToggleCorner = Toggle:FindFirstChildOfClass("UICorner")
+			if not ToggleCorner then
+				ToggleCorner = Instance.new("UICorner")
+				ToggleCorner.Parent = Toggle
+			end
+			ToggleCorner.CornerRadius = UDim.new(0, 4)
+
+			local SwitchCorner = Toggle.Switch:FindFirstChildOfClass("UICorner")
+			if not SwitchCorner then
+				SwitchCorner = Instance.new("UICorner")
+				SwitchCorner.Parent = Toggle.Switch
+			end
+			SwitchCorner.CornerRadius = UDim.new(0, 4)
+
+			local IndicatorCorner = Toggle.Switch.Indicator:FindFirstChildOfClass("UICorner")
+			if not IndicatorCorner then
+				IndicatorCorner = Instance.new("UICorner")
+				IndicatorCorner.Parent = Toggle.Switch.Indicator
+			end
+			IndicatorCorner.CornerRadius = UDim.new(0, 4)
+
 			Toggle.BackgroundTransparency = 1
 			Toggle.UIStroke.Transparency = 1
 			Toggle.Title.TextTransparency = 1
@@ -3153,7 +3408,6 @@ end
 					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
 					Toggle.Title.Text = "Callback Error"
 					print("Rayfield | "..ToggleSettings.Name.." Callback Error " ..tostring(Response))
-					warn('Check docs.sirius.menu for help with Rayfield specific development.')
 					task.wait(0.5)
 					Toggle.Title.Text = ToggleSettings.Name
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -3203,7 +3457,6 @@ end
 					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
 					Toggle.Title.Text = "Callback Error"
 					print("Rayfield | "..ToggleSettings.Name.." Callback Error " ..tostring(Response))
-					warn('Check docs.sirius.menu for help with Rayfield specific development.')
 					task.wait(0.5)
 					Toggle.Title.Text = ToggleSettings.Name
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
