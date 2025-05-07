@@ -78,7 +78,6 @@ local settingsTable = {
 	General = {
 		-- if needs be in order just make getSetting(name)
 		rayfieldOpen = {Type = 'bind', Value = 'K', Name = 'Rayfield Keybind'},
-		-- buildwarnings
 		-- rayfieldprompts
 
 	},
@@ -356,10 +355,10 @@ local RayfieldLibrary = {
 		},
 
 		Skibidi = {
-				TextColor = Color3.fromRGB(215, 215, 215),  -- Soft white text, not too harsh
-
+			TextColor = Color3.fromRGB(224, 224, 224),  -- Soft white text, not too harsh
+                
 			Background = Color3.fromRGB(10, 10, 10),  -- Deep black background
-			Topbar = Color3.fromRGB(12, 12, 12),  -- Slightly lighter than background
+			Topbar = Color3.fromRGB(0, 0, 0),  -- Slightly lighter than background
 			Shadow = Color3.fromRGB(0, 0, 0),  -- Pure black shadow
 
 			NotificationBackground = Color3.fromRGB(15, 15, 15),  -- Soft black notification box
@@ -385,8 +384,8 @@ local RayfieldLibrary = {
 			ToggleEnabled = Color3.fromRGB(150, 100, 255),  -- Purple accent
 			ToggleDisabled = Color3.fromRGB(60, 60, 60),
 			ToggleEnabledStroke = Color3.fromRGB(170, 120, 255),
-			ToggleDisabledStroke = Color3.fromRGB(90, 90, 90),
-			ToggleEnabledOuterStroke = Color3.fromRGB(50, 50, 50),
+			ToggleDisabledStroke = Color3.fromRGB(60, 60, 60),
+			ToggleEnabledOuterStroke = Color3.fromRGB(30, 30, 30),
 			ToggleDisabledOuterStroke = Color3.fromRGB(30, 30, 30),
 
 			DropdownSelected = Color3.fromRGB(22, 22, 22),
@@ -1718,7 +1717,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Main.Visible = true
 	Main.BackgroundTransparency = 1
 	local uiCorner = Main:FindFirstChildOfClass("UICorner") or Instance.new("UICorner", Main)
-	uiCorner.CornerRadius = UDim.new(0, 7)
+	uiCorner.CornerRadius = UDim.new(0, 8)
 	if Main:FindFirstChild('Notice') then Main.Notice.Visible = false end
 	Main.Shadow.Image.ImageTransparency = 1
 
@@ -2104,6 +2103,11 @@ function RayfieldLibrary:CreateWindow(Settings)
 			TabButton.Size = UDim2.new(0, TabButton.Title.TextBounds.X + 52, 0, 30)
 		end
 
+        -- Apply UICorner to TabButton
+        local TabButtonCorner = TabButton:FindFirstChildOfClass("UICorner") or Instance.new("UICorner")
+        TabButtonCorner.CornerRadius = UDim.new(0, 8) -- Decreased corner radius to 4 pixels
+        TabButtonCorner.Parent = TabButton
+
 
 
 		TabButton.BackgroundTransparency = 1
@@ -2207,7 +2211,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Button.Parent = TabPage
 
 			if Button:FindFirstChild("UICorner") then
-				Button.UICorner.CornerRadius = UDim.new(0, 4)
+				Button.UICorner.CornerRadius = UDim.new(0, 2)
 			end
 
 			Button.BackgroundTransparency = 1
@@ -2236,7 +2240,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			ElementIndicator.AnchorPoint = Vector2.new(1, 0.5) -- Right-aligned
 			ElementIndicator.BackgroundTransparency = 1
 			ElementIndicator.Image = "rbxassetid://10723375250" -- Your gear icon asset ID
-			ElementIndicator.ImageTransparency = 0 -- Always fully visible
+			ElementIndicator.ImageTransparency = 0.3 -- Always fully visible
 			ElementIndicator.ZIndex = 3 -- Ensure it’s on top
 			ElementIndicator.ImageColor3 = Color3.fromRGB(200, 200, 200) -- Light gray tint to match UI theme
 
@@ -2318,10 +2322,10 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 			-- Adjust the UICorner of the ColorPicker itself
 			if ColorPicker:FindFirstChild("UICorner") then
-				ColorPicker.UICorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+				ColorPicker.UICorner.CornerRadius = UDim.new(0, 2) -- Decreased corner radius
 			else
 				local UICorner = Instance.new("UICorner")
-				UICorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+				UICorner.CornerRadius = UDim.new(0, 2) -- Decreased corner radius
 				UICorner.Parent = ColorPicker
 			end
 
@@ -2600,10 +2604,10 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 			-- Adjust the UICorner of the Label itself
 			if Label:FindFirstChild("UICorner") then
-				Label.UICorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+				Label.UICorner.CornerRadius = UDim.new(0, 2) -- Decreased corner radius
 			else
 				local UICorner = Instance.new("UICorner")
-				UICorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+				UICorner.CornerRadius = UDim.new(0, 2) -- Decreased corner radius
 				UICorner.Parent = Label
 			end
 
@@ -2704,10 +2708,10 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Paragraph.Parent = TabPage
 
 			if Paragraph:FindFirstChild("UICorner") then
-				Paragraph.UICorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+				Paragraph.UICorner.CornerRadius = UDim.new(0, 2) -- Decreased corner radius
 			else
 				local UICorner = Instance.new("UICorner")
-				UICorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+				UICorner.CornerRadius = UDim.new(0, 2) -- Decreased corner radius
 				UICorner.Parent = Paragraph
 			end
 
@@ -2757,21 +2761,11 @@ function RayfieldLibrary:CreateWindow(Settings)
 			-- Apply smaller corner radius to the outer Input frame
 			local inputCorner = Input:FindFirstChildOfClass("UICorner")
 			if inputCorner then
-				inputCorner.CornerRadius = UDim.new(0, 4)
+				inputCorner.CornerRadius = UDim.new(0, 2)
 			else
 				local newCorner = Instance.new("UICorner")
-				newCorner.CornerRadius = UDim.new(0, 4)
+				newCorner.CornerRadius = UDim.new(0, 2)
 				newCorner.Parent = Input
-			end
-
-			-- Apply smaller corner radius to the inner InputFrame (textbox)
-			local frameCorner = Input.InputFrame:FindFirstChildOfClass("UICorner")
-			if frameCorner then
-				frameCorner.CornerRadius = UDim.new(0, 4)
-			else
-				local newFrameCorner = Instance.new("UICorner")
-				newFrameCorner.CornerRadius = UDim.new(0, 4)
-				newFrameCorner.Parent = Input.InputFrame
 			end
 
 			TweenService:Create(Input, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
@@ -2861,7 +2855,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 			local corner = Dropdown:FindFirstChildOfClass("UICorner")
 			if corner then
-				corner.CornerRadius = UDim.new(0, 4)  -- adjust the value here for sharper corners
+				corner.CornerRadius = UDim.new(0, 2)  -- adjust the value here for sharper corners
 			end
 
 			Dropdown.List.Visible = false
@@ -3185,7 +3179,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 			local keybindCorner = Keybind:FindFirstChildOfClass("UICorner")
 			if keybindCorner then
-				keybindCorner.CornerRadius = UDim.new(0, 4)  -- adjust the value here for sharper corners
+				keybindCorner.CornerRadius = UDim.new(0, 2)  -- adjust the value here for sharper corners
 			end
 
 			Keybind.KeybindFrame.BackgroundColor3 = SelectedTheme.InputBackground
@@ -3197,11 +3191,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 			Keybind.KeybindFrame.KeybindBox.Text = KeybindSettings.CurrentKeybind
 			Keybind.KeybindFrame.Size = UDim2.new(0, Keybind.KeybindFrame.KeybindBox.TextBounds.X + 24, 0, 30)
-
-			local keybindFrameCorner = Keybind.KeybindFrame:FindFirstChildOfClass("UICorner")
-			if keybindFrameCorner then
-				keybindFrameCorner.CornerRadius = UDim.new(0, 4)  -- adjust the value here for sharper corners
-			end
 
 			Keybind.KeybindFrame.KeybindBox.Focused:Connect(function()
 				CheckingForKey = true
@@ -3326,21 +3315,21 @@ function RayfieldLibrary:CreateWindow(Settings)
 				ToggleCorner = Instance.new("UICorner")
 				ToggleCorner.Parent = Toggle
 			end
-			ToggleCorner.CornerRadius = UDim.new(0, 4)
+			ToggleCorner.CornerRadius = UDim.new(0, 2)
 
 			local SwitchCorner = Toggle.Switch:FindFirstChildOfClass("UICorner")
 			if not SwitchCorner then
 				SwitchCorner = Instance.new("UICorner")
 				SwitchCorner.Parent = Toggle.Switch
 			end
-			SwitchCorner.CornerRadius = UDim.new(0, 4)
+			SwitchCorner.CornerRadius = UDim.new(0, 6)
 
 			local IndicatorCorner = Toggle.Switch.Indicator:FindFirstChildOfClass("UICorner")
 			if not IndicatorCorner then
 				IndicatorCorner = Instance.new("UICorner")
 				IndicatorCorner.Parent = Toggle.Switch.Indicator
 			end
-			IndicatorCorner.CornerRadius = UDim.new(0, 4)
+			IndicatorCorner.CornerRadius = UDim.new(0, 5)
 
 			Toggle.BackgroundTransparency = 1
 			Toggle.UIStroke.Transparency = 1
@@ -3503,31 +3492,47 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 		-- Slider
 		function Tab:CreateSlider(SliderSettings)
-			local SLDragging = false
-			local Slider = Elements.Template.Slider:Clone()
-			Slider.Name = SliderSettings.Name
-			Slider.Title.Text = SliderSettings.Name
-			Slider.Visible = true
-			Slider.Parent = TabPage
+            local SLDragging = false
+            local Slider = Elements.Template.Slider:Clone()
+            Slider.Name = SliderSettings.Name
+            Slider.Title.Text = SliderSettings.Name
+            Slider.Visible = true
+            Slider.Parent = TabPage
 
-			Slider.BackgroundTransparency = 1
-			Slider.UIStroke.Transparency = 1
-			Slider.Title.TextTransparency = 1
+            Slider.BackgroundTransparency = 1
+            Slider.UIStroke.Transparency = 1
+            Slider.Title.TextTransparency = 1
 
-			if SelectedTheme ~= RayfieldLibrary.Theme.Default then
-				Slider.Main.Shadow.Visible = false
-			end
+            if SelectedTheme ~= RayfieldLibrary.Theme.Default then
+                Slider.Main.Shadow.Visible = false
+            end
 
-			Slider.Main.BackgroundColor3 = SelectedTheme.SliderBackground
-			Slider.Main.UIStroke.Color = SelectedTheme.SliderStroke
-			Slider.Main.Progress.UIStroke.Color = SelectedTheme.SliderStroke
-			Slider.Main.Progress.BackgroundColor3 = SelectedTheme.SliderProgress
+            Slider.Main.BackgroundColor3 = SelectedTheme.SliderBackground
+            Slider.Main.UIStroke.Color = SelectedTheme.SliderStroke
+            Slider.Main.Progress.UIStroke.Color = SelectedTheme.SliderStroke
+            Slider.Main.Progress.BackgroundColor3 = SelectedTheme.SliderProgress
 
-			TweenService:Create(Slider, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
-			TweenService:Create(Slider.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
-			TweenService:Create(Slider.Title, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()	
+            local SliderCorner = Slider:FindFirstChildOfClass("UICorner") or Instance.new("UICorner")
+            SliderCorner.CornerRadius = UDim.new(0, 2) -- Decreased corner radius
+            
+            SliderCorner.Parent = Slider
+            local MainCorner = Slider.Main:FindFirstChildOfClass("UICorner") or Instance.new("UICorner")
+            MainCorner.CornerRadius = UDim.new(0, 9) -- Decreased corner radius
+            MainCorner.Parent = Slider.Main
 
-			Slider.Main.Progress.Size =	UDim2.new(0, Slider.Main.AbsoluteSize.X * ((SliderSettings.CurrentValue + SliderSettings.Range[1]) / (SliderSettings.Range[2] - SliderSettings.Range[1])) > 5 and Slider.Main.AbsoluteSize.X * (SliderSettings.CurrentValue / (SliderSettings.Range[2] - SliderSettings.Range[1])) or 5, 1, 0)
+            local ProgressCorner = Slider.Main.Progress:FindFirstChildOfClass("UICorner") or Instance.new("UICorner")
+            ProgressCorner.CornerRadius = UDim.new(0, 9) -- Decreased corner radius
+            ProgressCorner.Parent = Slider.Main.Progress
+
+            local InteractCorner = Slider.Main.Interact:FindFirstChildOfClass("UICorner") or Instance.new("UICorner")
+            InteractCorner.CornerRadius = UDim.new(0, 4) -- Decreased corner radius
+            InteractCorner.Parent = Slider.Main.Interact
+
+            TweenService:Create(Slider, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
+            TweenService:Create(Slider.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
+            TweenService:Create(Slider.Title, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()
+
+            Slider.Main.Progress.Size = UDim2.new(0, Slider.Main.AbsoluteSize.X * ((SliderSettings.CurrentValue + SliderSettings.Range[1]) / (SliderSettings.Range[2] - SliderSettings.Range[1])) > 5 and Slider.Main.AbsoluteSize.X * (SliderSettings.CurrentValue / (SliderSettings.Range[2] - SliderSettings.Range[1])) or 5, 1, 0)
 
 			if not SliderSettings.Suffix then
 				Slider.Main.Information.Text = tostring(SliderSettings.CurrentValue)
