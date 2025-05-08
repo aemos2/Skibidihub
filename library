@@ -2034,102 +2034,101 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 		-- Button
 		function Tab:CreateButton(ButtonSettings)
-			local ButtonValue = {}
+            local ButtonValue = {}
 
-			local Button = Elements.Template.Button:Clone()
-			Button.Name = ButtonSettings.Name
-			Button.Title.Text = ButtonSettings.Name
-			Button.Visible = true
-			Button.Parent = TabPage
+            local Button = Elements.Template.Button:Clone()
+            Button.Name = ButtonSettings.Name
+            Button.Title.Text = ButtonSettings.Name
+            Button.Visible = true
+            Button.Parent = TabPage
 
             if Button:FindFirstChild("UICorner") then
-				Button.UICorner.CornerRadius = UDim.new(0, 2)
-			end
+                Button.UICorner.CornerRadius = UDim.new(0, 2)
+            end
 
-			Button.BackgroundTransparency = 1
-			Button.UIStroke.Transparency = 1
-			Button.Title.TextTransparency = 1
+            Button.BackgroundTransparency = 1
+            Button.UIStroke.Transparency = 1
+            Button.Title.TextTransparency = 1
 
             local ElementIndicator
-			if Button:FindFirstChild("ElementIndicator") then
-				ElementIndicator = Button.ElementIndicator
-				if ElementIndicator:IsA("TextLabel") then
-					ElementIndicator:Destroy()
-					ElementIndicator = Instance.new("ImageLabel")
-					ElementIndicator.Name = "ElementIndicator"
-					ElementIndicator.Parent = Button
-				end
-			else
-				ElementIndicator = Instance.new("ImageLabel")
-				ElementIndicator.Name = "ElementIndicator"
-				ElementIndicator.Parent = Button
-			end
+            if Button:FindFirstChild("ElementIndicator") then
+                ElementIndicator = Button.ElementIndicator
+                if ElementIndicator:IsA("TextLabel") then
+                    ElementIndicator:Destroy()
+                    ElementIndicator = Instance.new("ImageLabel")
+                    ElementIndicator.Name = "ElementIndicator"
+                    ElementIndicator.Parent = Button
+                end
+            else
+                ElementIndicator = Instance.new("ImageLabel")
+                ElementIndicator.Name = "ElementIndicator"
+                ElementIndicator.Parent = Button
+            end
 
-			ElementIndicator.Size = UDim2.new(0, 20, 0, 20)
-			ElementIndicator.Position = UDim2.new(1, -10, 0.5, 0)
-			ElementIndicator.AnchorPoint = Vector2.new(1, 0.5)
-			ElementIndicator.BackgroundTransparency = 1
-			ElementIndicator.Image = "rbxassetid://10723375250"
-			ElementIndicator.ImageTransparency = 0.3
-			ElementIndicator.ZIndex = 3
-			ElementIndicator.ImageColor3 = Color3.fromRGB(200, 200, 200)
+            ElementIndicator.Size = UDim2.new(0, 20, 0, 20)
+            ElementIndicator.Position = UDim2.new(1, -10, 0.5, 0)
+            ElementIndicator.AnchorPoint = Vector2.new(1, 0.5)
+            ElementIndicator.BackgroundTransparency = 1
+            ElementIndicator.Image = "rbxassetid://10723375250"
+            ElementIndicator.ImageTransparency = 0.3
+            ElementIndicator.ZIndex = 3
+            ElementIndicator.ImageColor3 = Color3.fromRGB(200, 200, 200)
 
-			for _, child in pairs(Button:GetChildren()) do
-				if child:IsA("ImageLabel") and child.Name ~= "ElementIndicator" then
-					child.Visible = false
-				end
-			end
+            for _, child in pairs(Button:GetChildren()) do
+                if child:IsA("ImageLabel") and child.Name ~= "ElementIndicator" then
+                    child.Visible = false
+                end
+            end
 
-			TweenService:Create(Button, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
-			TweenService:Create(Button.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
-			TweenService:Create(Button.Title, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()	
+            TweenService:Create(Button, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
+            TweenService:Create(Button.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
+            TweenService:Create(Button.Title, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()	
 
+            Button.Interact.MouseButton1Click:Connect(function()
+                local Success, Response = pcall(ButtonSettings.Callback)
+                if not Success then
+                    TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
+                    TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {ImageTransparency = 1}):Play()
+                    TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
+                    Button.Title.Text = "Callback Error"
+                    print("Rayfield | "..ButtonSettings.Name.." Callback Error " ..tostring(Response))
+                    warn('Check docs.sirius.menu for help with Rayfield specific development.')
+                    task.wait(0.5)
+                    Button.Title.Text = ButtonSettings.Name
+                    TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
+                    TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {ImageTransparency = 0.3}):Play()
+                    TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
+                else
+                    if not ButtonSettings.Ext then
+                        SaveConfiguration(ButtonSettings.Name..'\n')
+                    end
+                    TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
+                    TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {ImageTransparency = 1}):Play()
+                    TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
+                    task.wait(0.2)
+                    TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
+                    TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {ImageTransparency = 0.3}):Play()
+                    TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
+                end
+            end)
 
-			Button.Interact.MouseButton1Click:Connect(function()
-				local Success, Response = pcall(ButtonSettings.Callback)
-				if not Success then
-					TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
-					TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 1}):Play()
-					TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
-					Button.Title.Text = "Callback Error"
-					print("Rayfield | "..ButtonSettings.Name.." Callback Error " ..tostring(Response))
-					warn('Check docs.sirius.menu for help with Rayfield specific development.')
-					task.wait(0.5)
-					Button.Title.Text = ButtonSettings.Name
-					TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
-					TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 0.9}):Play()
-					TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
-				else
-					if not ButtonSettings.Ext then
-						SaveConfiguration(ButtonSettings.Name..'\n')
-					end
-					TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
-					TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 1}):Play()
-					TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
-					task.wait(0.2)
-					TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
-					TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 0.9}):Play()
-					TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
-				end
-			end)
+            Button.MouseEnter:Connect(function()
+                TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
+                TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {ImageTransparency = 0.1}):Play()
+            end)
 
-			Button.MouseEnter:Connect(function()
-				TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
-				TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 0.7}):Play()
-			end)
+            Button.MouseLeave:Connect(function()
+                TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
+                TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {ImageTransparency = 0.3}):Play()
+            end)
 
-			Button.MouseLeave:Connect(function()
-				TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
-				TweenService:Create(Button.ElementIndicator, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {TextTransparency = 0.9}):Play()
-			end)
+            function ButtonValue:Set(NewButton)
+                Button.Title.Text = NewButton
+                Button.Name = NewButton
+            end
 
-			function ButtonValue:Set(NewButton)
-				Button.Title.Text = NewButton
-				Button.Name = NewButton
-			end
-
-			return ButtonValue
-		end
+            return ButtonValue
+        end
 
 		-- ColorPicker
 		function Tab:CreateColorPicker(ColorPickerSettings) -- by Throit
