@@ -1566,7 +1566,7 @@ function RayfieldLibrary:CreateChangelogDialog(changelogText)
     DialogTitle.Size = UDim2.new(1, -20, 0, 30)
     DialogTitle.Position = UDim2.new(0, 10, 0, 10)
     DialogTitle.BackgroundTransparency = 1
-    DialogTitle.Text = "Rayfield Interface Suite - Changelog"
+    DialogTitle.Text = "Skibidi Hub - Changelog"
     DialogTitle.TextColor3 = SelectedTheme.TextColor or Color3.fromRGB(255, 255, 255)
     DialogTitle.TextSize = isMobile and 20 or 24
     DialogTitle.Font = Enum.Font.SourceSansBold
@@ -1706,14 +1706,14 @@ Notes
                 Title = "Discord Invitation",
                 Content = "The invite link has been copied to your clipboard!",
                 Duration = 6.5,
-                Image = 10709798443
+                Image = 4483362458
             })
         else
             RayfieldLibrary:Notify({
                 Title = "Discord Invitation Failed",
                 Content = "Your executor doesn't support setclipboard.",
                 Duration = 6.5,
-                Image = 10709799124
+                Image = 4483362458
             })
         end
     end)
@@ -1771,7 +1771,7 @@ Notes
             Title = "Changelog Closed",
             Content = "The changelog has been closed",
             Duration = 2.5,
-            Image = 10723346871
+            Image = 4483362458
         })
     end
 
