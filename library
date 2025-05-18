@@ -2159,7 +2159,7 @@ function RayfieldLibrary:CreateWindow(Settings)
                 SearchInput = Instance.new("TextBox")
                 SearchInput.Name = "Input"
                 SearchInput.Text = ""
-                SearchInput.PlaceholderText = "Search Changelog..."
+                SearchInput.PlaceholderText = "Search..."
                 SearchInput.PlaceholderColor3 = (SelectedTheme.TextColor or Color3.fromRGB(255, 255, 255)):Lerp(Color3.new(0, 0, 0), 0.5)
                 SearchInput.TextColor3 = SelectedTheme.TextColor or Color3.fromRGB(255, 255, 255)
                 SearchInput.TextTransparency = 0.2
