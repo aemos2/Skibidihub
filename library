@@ -2145,7 +2145,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 
                 SearchIcon = Instance.new("ImageLabel")
                 SearchIcon.Name = "SearchIcon"
-                SearchIcon.Image = "rbxassetid://4483362458" -- Default search icon; replace with Lucide if available
+                SearchIcon.Image = "rbxassetid://10734943674" -- Default search icon; replace with Lucide if available
                 SearchIcon.ImageColor3 = SelectedTheme.TextColor or Color3.fromRGB(255, 255, 255)
                 SearchIcon.ImageTransparency = 0.5
                 SearchIcon.BackgroundTransparency = 1
