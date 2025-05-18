@@ -2032,6 +2032,8 @@ function RayfieldLibrary:CreateWindow(Settings)
         function RayfieldLibrary:CreateChangelogDialog(config)
             local changelogText = type(config) == "string" and config or (type(config) == "table" and config.ChangelogText or "")
             local showSearchBar = type(config) == "table" and config.Search ~= false -- Default to true if unspecified
+            local dialogTitle = type(config) == "table" and config.Title or "Skibidi Hub - Changelog" -- Configurable title
+            local notificationsEnabled = type(config) == "table" and config.Notifications ~= false -- New: Notification toggle, default to true
             local altButton = type(config) == "table" and config.Altbutton or { Name = "Join Discord", Clipboard = "https://discord.gg/dtneYN6NTY" } -- Default to Join Discord
             local notification = type(config) == "table" and config.Notification or { Title = "Changelog Closed", Content = "The changelog has been closed", Duration = 2.5, Image = 10723346871 } -- Default close notification
             local altButtonNotification = type(config) == "table" and config.AltbuttonNotification or {
@@ -2113,7 +2115,7 @@ function RayfieldLibrary:CreateWindow(Settings)
             DialogTitle.Size = UDim2.new(1, -20, 0, 30)
             DialogTitle.Position = UDim2.new(0, 10, 0, 10)
             DialogTitle.BackgroundTransparency = 1
-            DialogTitle.Text = "Skibidi Hub - Changelog"
+            DialogTitle.Text = dialogTitle
             DialogTitle.TextColor3 = SelectedTheme.TextColor or Color3.fromRGB(255, 255, 255)
             DialogTitle.TextSize = isMobile and 20 or 24
             DialogTitle.Font = Enum.Font.SourceSansBold
@@ -2316,19 +2318,23 @@ function RayfieldLibrary:CreateWindow(Settings)
             AltButton.MouseButton1Click:Connect(function()
                 if setclipboard then
                     setclipboard(altButton.Clipboard)
-                    RayfieldLibrary:Notify({
-                        Title = altButtonNotification.Success.Title or (altButton.Name .. " Copied"),
-                        Content = altButtonNotification.Success.Content or "The link has been copied to your clipboard!",
-                        Duration = altButtonNotification.Success.Duration or 6.5,
-                        Image = altButtonNotification.Success.Image or 10709798443
-                    })
+                    if notificationsEnabled then -- New: Only show notification if enabled
+                        RayfieldLibrary:Notify({
+                            Title = altButtonNotification.Success.Title or (altButton.Name .. " Copied"),
+                            Content = altButtonNotification.Success.Content or "The link has been copied to your clipboard!",
+                            Duration = altButtonNotification.Success.Duration or 6.5,
+                            Image = altButtonNotification.Success.Image or 10709798443
+                        })
+                    end
                 else
-                    RayfieldLibrary:Notify({
-                        Title = altButtonNotification.Failure.Title or (altButton.Name .. " Failed"),
-                        Content = altButtonNotification.Failure.Content or "Your executor doesn't support setclipboard.",
-                        Duration = altButtonNotification.Failure.Duration or 6.5,
-                        Image = altButtonNotification.Failure.Image or 10709799124
-                    })
+                    if notificationsEnabled then -- New: Only show notification if enabled
+                        RayfieldLibrary:Notify({
+                            Title = altButtonNotification.Failure.Title or (altButton.Name .. " Failed"),
+                            Content = altButtonNotification.Failure.Content or "Your executor doesn't support setclipboard.",
+                            Duration = altButtonNotification.Failure.Duration or 6.5,
+                            Image = altButtonNotification.Failure.Image or 10709799124
+                        })
+                    end
                 end
             end)
 
@@ -2398,12 +2404,14 @@ function RayfieldLibrary:CreateWindow(Settings)
                 task.wait(0.2)
                 ChangelogDialog:Destroy()
 
-                RayfieldLibrary:Notify({
-                    Title = notification.Title or "Changelog Closed",
-                    Content = notification.Content or "The changelog has been closed",
-                    Duration = notification.Duration or 2.5,
-                    Image = notification.Image or 10723346871
-                })
+                if notificationsEnabled then -- New: Only show notification if enabled
+                    RayfieldLibrary:Notify({
+                        Title = notification.Title or "Changelog Closed",
+                        Content = notification.Content or "The changelog has been closed",
+                        Duration = notification.Duration or 2.5,
+                        Image = notification.Image or 10723346871
+                    })
+                end
             end
 
             CloseButton.MouseButton1Click:Connect(hideDialog)
