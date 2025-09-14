@@ -1245,7 +1245,7 @@ end
 
 local function Maximise()
 	Debounce = true
-	Topbar.ChangeSize.Image = "rbxassetid://"..10137941941
+	Topbar.ChangeSize.Image = "rbxassetid://"..10734895530
 
 	TweenService:Create(Topbar.UIStroke, TweenInfo.new(0.5, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
 	TweenService:Create(Main.Shadow.Image, TweenInfo.new(0.5, Enum.EasingStyle.Exponential), {ImageTransparency = 0.6}):Play()
@@ -1418,7 +1418,7 @@ end
 
 local function Minimise()
 	Debounce = true
-	Topbar.ChangeSize.Image = "rbxassetid://"..11036884234
+	Topbar.ChangeSize.Image = "rbxassetid://"..10734886496
 
 	Topbar.UIStroke.Color = SelectedTheme.ElementStroke
 
@@ -4193,6 +4193,16 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 	return Window
 end
+
+if Topbar:FindFirstChild('Settings') then
+    Topbar.Settings.Image = "rbxassetid://10734950309"
+    Topbar.Settings.ImageRectSize = Vector2.new(0, 0)
+    Topbar.Settings.ImageRectOffset = Vector2.new(0, 0)
+end
+
+Topbar.ChangeSize.Image = "rbxassetid://10734895530"
+Topbar.ChangeSize.ImageRectSize = Vector2.new(0, 0)
+Topbar.ChangeSize.ImageRectOffset = Vector2.new(0, 0)
 
 local function setVisibility(visibility: boolean, notify: boolean?)
 	if Debounce then return end
