@@ -19867,3 +19867,4 @@ for _, class in ipairs({ Library, Window, Tab }) do
 end
 
 return Library
+end)()
