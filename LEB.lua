@@ -12763,9 +12763,9 @@ end
 function Window:_renderIdentity(instant)
     for _, entry in ipairs(self._identity.Names) do
         if entry.Kind == "User" then
-            entry.Label.Text = self._hideName and "@hidden" or ("@" .. LocalPlayer.Name)
+            entry.Label.Text = self._hideName and "@Skibidi Hub" or ("@" .. LocalPlayer.Name)
         else
-            entry.Label.Text = self._hideName and "Hidden" or LocalPlayer.DisplayName
+            entry.Label.Text = self._hideName and "Skibidi Hub" or LocalPlayer.DisplayName
         end
     end
     local duration = instant and 0 or 0.2
